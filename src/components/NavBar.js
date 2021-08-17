@@ -2,8 +2,8 @@ import React from 'react'
 
 const NavBar = () => {
     return (
-        <div>
-            
+        <div className="ui segment">
+            NavBar
         </div>
     )
 }
