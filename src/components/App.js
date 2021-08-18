@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Router from './Router'
 import NavBar from './NavBar'
+import { fetchUsers } from '../actions/usersActions'
 
-const App = () => {
-    return (
-        <div className="ui container">
-            <NavBar />
-            <Router />
-        </div>
-    )
+class App extends Component {
+
+    componentDidMount(){
+        this.props.fetchUsers()
+    }
+    render (){
+        return (
+            <div className="ui container">
+                <NavBar />
+                <Router />
+            </div>
+        )
+    }
+    
 }
 
-export default App
+
+export default connect(null, {fetchUsers})(App)
