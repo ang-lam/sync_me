@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { login } from '../actions/usersActions'
 import Home from '../components/Home'
 import RegisterPage from './RegisterPage'
 import LoginPage from './LoginPage'
