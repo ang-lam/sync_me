@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/usersActions'
+import { withRouter } from 'react-router-dom'
 
 class LoginPage extends Component {
 
@@ -18,6 +19,7 @@ class LoginPage extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.login(this.state)
+        this.props.history.push("/home")
     }
 
     render() {
@@ -50,4 +52,4 @@ const mapDispatchToProps = dispatch => {
         login: userInfo => dispatch(login(userInfo))
     }
 }
-export default connect(null, mapDispatchToProps)(LoginPage)
+export default withRouter(connect(null, mapDispatchToProps)(LoginPage))
