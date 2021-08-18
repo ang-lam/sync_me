@@ -7,35 +7,49 @@ import { registerUser } from '../actions/usersActions'
 class RegisterPage extends Component {
 
     state = {
-        user: {
-            firstName: '',
-            lastName: '',
-            company: '',
-            bio: '',
-            email: '',
-            password: '',
-            picture: ''
-        },
-        submitted: false
+        firstName: '',
+        lastName: '',
+        company: '',
+        bio: '',
+        email: '',
+        password: '',
+        picture: ''
+        // user: {
+        //     firstName: '',
+        //     lastName: '',
+        //     company: '',
+        //     bio: '',
+        //     email: '',
+        //     password: '',
+        //     picture: ''
+        // },
+        // submitted: false
     };
 
     handleFormChange = e => {
+        // this.setState({
+        //     ...this.state,
+        //     user: {
+        //         ...this.state.user,
+        //         [e.target.name]: e.target.value
+        //     }
+        // }, () => console.log(this.state))
         this.setState({
             ...this.state,
-            user: {
-                ...this.state.user,
-                [e.target.name]: e.target.value
-            }
+            [e.target.name]: e.target.value
         }, () => console.log(this.state))
+
     }
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        this.setState({
-            ...this.state,
-            submitted: true
-        })
-        await this.props.registerUser(this.state)
+        // this.setState({
+        //     ...this.state,
+        //     submitted: true
+        // })
+        // await this.props.registerUser(this.state)
+        this.props.registerUser(this.state)
+        this.props.history.push("/home")
     }
 
     handleProfilePicture = e => {
@@ -55,41 +69,41 @@ class RegisterPage extends Component {
                         onChange={this.handleFormChange}
                         type="text"
                         name="firstName"
-                        value={this.state.user.firstName}
+                        value={this.state.firstName}
                     /> <br />
                     <label>Last Name:</label>
                     <input
                         onChange={this.handleFormChange}
                         type="text"
                         name="lastName"
-                        value={this.state.user.lastName}
+                        value={this.state.lastName}
                     /> <br />
                     <label>Company:</label>
                     <input
                         onChange={this.handleFormChange}
                         type="text"
                         name="company"
-                        value={this.state.user.company}
+                        value={this.state.company}
                     /> <br />
                     <label>Bio:</label>
                     <textarea
                         onChange={this.handleFormChange}
                         name="bio"
-                        value={this.state.user.bio}
+                        value={this.state.bio}
                     /> <br />
                     <label>Email:</label>
                     <input
                         onChange={this.handleFormChange}
                         type="text"
                         name="email"
-                        value={this.state.user.email}
+                        value={this.state.email}
                     /> <br />
                     <label>Password:</label>
                     <input
                         onChange={this.handleFormChange}
                         type="password"
                         name="password"
-                        value={this.state.user.password}
+                        value={this.state.password}
                     /> <br />
                     <label>Profile Picture:</label>
                     <input
@@ -97,7 +111,7 @@ class RegisterPage extends Component {
                         type="file"
                         accept="/images/*"
                         name="picture"
-                        value={this.state.user.picture}
+                        // value={this.state.picture}
                     /> <br />
                     <button type="submit">Register</button>
                 </form>
@@ -113,4 +127,4 @@ const mapDispatchToProps = dispatch => {
   
 }
 
-export default connect(null, mapDispatchToProps)(RegisterPage)
+export default withRouter(connect(null, mapDispatchToProps)(RegisterPage))

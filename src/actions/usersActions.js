@@ -23,10 +23,10 @@
 
 export const registerUser = user => {
     console.log('argument', user)
-    return async dispatch => {
+    return dispatch => {
         return fetch('http://127.0.0.1:3000/users', {
         method: 'POST',
-        body: JSON.stringify(user),
+        body: JSON.stringify({user}),
         headers: { 'Content-Type': 'application/json'}
     })
         .then (resp => resp.json())
