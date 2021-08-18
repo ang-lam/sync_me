@@ -21,6 +21,21 @@
 //         .then (user => dispatch({ type: 'CREATE_USER', payload: user}))
 // }
 
+export const login = user => {
+    return dispatch => {
+        return fetch('http://127.0.0.1:3000/users', {
+            method: 'POST',
+            body: JSON.stringify({user}),
+            headers: { 'Content-Type': 'application/json'}
+        })
+            .then(resp => resp.json())
+            .then(data => {
+                localStorage.setItem("token", data.jwt)
+                dispatch(loginUser(data.user))
+            })
+    }
+}
+
 export const registerUser = user => {
     console.log('argument', user)
     return dispatch => {
