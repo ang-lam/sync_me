@@ -1,4 +1,5 @@
 //refactor url to const
+
 export const fetchUsers = () => {
     return dispatch => {
         fetch('http://127.0.0.1:3000/users')
@@ -9,7 +10,7 @@ export const fetchUsers = () => {
 
 export const login = user => {
     return dispatch => {
-        return fetch('http://127.0.0.1:3000/users', {
+        return fetch('http://127.0.0.1:3000/login', {
             method: 'POST',
             body: JSON.stringify({user}),
             headers: { 'Content-Type': 'application/json'}
