@@ -12,17 +12,17 @@ const Router = () => {
         <div>
             <Switch>
                 {/* <Route exact path='/' component={LoginPage} />
-                <Route exact path='/signup' component={RegisterPage}/>
-                <Route exact path='/home' component={Home} /> */}
+                <Route exact path='/signup' component={RegisterPage}/> */}
+                <Route exact path='/home' component={Home} />
                 <AuthRoute exact path='/'>
                     <LoginPage />
                 </AuthRoute>
                 <AuthRoute exact path='/signup'>
                     <RegisterPage />
                 </AuthRoute>
-                <AuthRoute exact path='/home' type='private'>
+                {/* <AuthRoute exact path='/home' type='private'>
                     <Home />
-                </AuthRoute>
+                </AuthRoute> */}
             </Switch>
             
         </div>
