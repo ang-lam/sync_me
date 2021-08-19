@@ -10,7 +10,7 @@ export const fetchUsers = () => {
 
 export const login = user => {
     return dispatch => {
-        return fetch('http://127.0.0.1:3000/login', {
+        fetch('http://127.0.0.1:3000/login', {
             method: 'POST',
             body: JSON.stringify({user}),
             headers: { 'Content-Type': 'application/json'}
@@ -25,7 +25,7 @@ export const login = user => {
 
 export const registerUser = user => {
     return dispatch => {
-        return fetch('http://127.0.0.1:3000/users', {
+        fetch('http://127.0.0.1:3000/users', {
         method: 'POST',
         body: JSON.stringify({user}),
         headers: { 'Content-Type': 'application/json'}
