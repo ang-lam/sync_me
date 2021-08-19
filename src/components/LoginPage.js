@@ -19,7 +19,6 @@ class LoginPage extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.login(this.state)
-        this.props.history.push("/home")
     }
 
     render() {
@@ -52,4 +51,12 @@ const mapDispatchToProps = dispatch => {
         login: userInfo => dispatch(login(userInfo))
     }
 }
-export default withRouter(connect(null, mapDispatchToProps)(LoginPage))
+
+const mapStateToProps = state => {
+    return {
+        user: state.currentUser
+    }
+}
+
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginPage))
