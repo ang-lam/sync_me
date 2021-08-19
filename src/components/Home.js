@@ -7,10 +7,6 @@ const Home = (props) => {
     const {firstName, lastName, company, bio} = props.user
     return (
         <div className="ui link cards">
-            {/* Home <br />
-            Name: {firstName} {lastName} <br />
-            Comapny: {company} <br />
-            Bio: {bio} */}
             < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/>
         </div>
     )

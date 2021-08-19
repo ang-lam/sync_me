@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 const UserCard = props => {
     return (
@@ -26,8 +25,4 @@ const UserCard = props => {
     )
 }
 
-const mapStateToProps = state => {
-
-}
-
-export default connect(mapStateToProps)(UserCard)
+export default UserCard
