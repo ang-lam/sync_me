@@ -53,9 +53,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 const mapStateToProps = state => {
-    return {
-        user: state.currentUser
-    }
+    return ({user: state.currentUser})
 }
 
 
