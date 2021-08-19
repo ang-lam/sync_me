@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/usersActions'
-import { withRouter } from 'react-router-dom'
 import { fetchUsers } from '../actions/usersActions'
-import { Redirect } from 'react-router-dom'
 
 class LoginPage extends Component {
 
@@ -14,6 +12,9 @@ class LoginPage extends Component {
 
     componentDidMount(){
         this.props.fetchUsers()
+        // if (this.props.user.currentUser !== {}){
+        //     this.props.routeInfo.history.push('/home')
+        // }
     }
 
     handleFormChange = e => {
@@ -26,9 +27,12 @@ class LoginPage extends Component {
         e.preventDefault()
         this.props.login(this.state)
         this.props.routeInfo.history.push('/home')
+        
     }
 
     render() {
+        console.log('login', this.props.user.currentUser)
+    
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
