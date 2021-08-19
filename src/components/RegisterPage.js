@@ -62,49 +62,66 @@ class RegisterPage extends Component {
     render() {
         return (
             <div>
-                <h2>Register</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <label>First Name:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="text"
-                        name="firstName"
-                        value={this.state.firstName}
-                    /> <br />
-                    <label>Last Name:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="text"
-                        name="lastName"
-                        value={this.state.lastName}
-                    /> <br />
-                    <label>Company:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="text"
-                        name="company"
-                        value={this.state.company}
-                    /> <br />
-                    <label>Bio:</label>
-                    <textarea
-                        onChange={this.handleFormChange}
-                        name="bio"
-                        value={this.state.bio}
-                    /> <br />
-                    <label>Email:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="text"
-                        name="email"
-                        value={this.state.email}
-                    /> <br />
-                    <label>Password:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="password"
-                        name="password"
-                        value={this.state.password}
-                    /> <br />
+                <form className="ui form" onSubmit={this.handleSubmit}>
+                    <h3 className="ui dividing header">Register</h3>
+                    <div className="field">
+                        <label>Name</label>
+                        <div className="two fields">
+                            <div className="field">
+                                <input
+                                onChange={this.handleFormChange}
+                                type="text"
+                                name="firstName"
+                                value={this.state.firstName}
+                                placeholder="First Name"
+                                />
+                            </div>
+                            <div className="field">
+                                <input
+                                onChange={this.handleFormChange}
+                                type="text"
+                                name="lastName"
+                                value={this.state.lastName}
+                                placeholder="Last Name"
+                                />
+                            </div>
+                        </div>  
+                    </div>
+                    <div className="field">
+                        <label>Company</label>
+                        <input
+                            onChange={this.handleFormChange}
+                            type="text"
+                            name="company"
+                            value={this.state.company}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>Bio</label>
+                        <textarea
+                            onChange={this.handleFormChange}
+                            name="bio"
+                            value={this.state.bio}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>Email</label>
+                        <input
+                            onChange={this.handleFormChange}
+                            type="text"
+                            name="email"
+                            value={this.state.email}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>Password</label>
+                        <input
+                            onChange={this.handleFormChange}
+                            type="password"
+                            name="password"
+                            value={this.state.password}
+                        />
+                    </div>
                     <label>Profile Picture:</label>
                     <input
                         onChange={this.handleProfilePicture}
@@ -113,7 +130,7 @@ class RegisterPage extends Component {
                         name="picture"
                         // value={this.state.picture}
                     /> <br />
-                    <button type="submit">Register</button>
+                    <button className="ui button" type="submit">Register</button>
                 </form>
             </div>
         )
