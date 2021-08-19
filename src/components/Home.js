@@ -2,15 +2,20 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 const Home = (props) => {
+    console.log('home:', props)
+    const {firstName, lastName, company, bio} = props.user
     return (
         <div>
-            {props.user.firstName}
+            Home <br />
+            Name: {firstName} {lastName} <br />
+            Comapny: {company} <br />
+            Bio: {bio}
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    return ({user: state.currentUser})
+    return ({user: state.users.currentUser})
 }
 
 export default connect(mapStateToProps)(Home)
