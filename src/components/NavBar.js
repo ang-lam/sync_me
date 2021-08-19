@@ -1,9 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <div className="ui segment">
-            NavBar
+            <Link to='/home'>Home</Link> |
+            <Link to='/syncs'>Syncs</Link> |
+            <Link to='/connect'>Sync</Link> |
+            <Link to='/login'>Login for test</Link> |
         </div>
     )
 }
