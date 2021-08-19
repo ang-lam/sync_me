@@ -8,6 +8,7 @@ const NavBar = () => {
             <Link to='/syncs'>Users Syncs</Link> |
             <Link to='/connect'>Sync</Link> |
             <Link to='/'>Login for test</Link> |
+            <Link to='/signup'>Signup</Link>
         </div>
     )
 }

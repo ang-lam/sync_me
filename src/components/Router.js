@@ -16,12 +16,13 @@ const Router = () => {
                 {/* <Route exact path='/signup' component={RegisterPage}/> */}
                 <Route exact path='/home' component={Home} />
                 <Route exact path='/connect' component={AllSyncs} />
+                <Route exact path='/signup' component={RegisterPage} />
                 {/* <AuthRoute exact path='/'>
                     <LoginPage />
                 </AuthRoute> */}
-                <AuthRoute exact path='/signup'>
+                {/* <AuthRoute exact path='/signup'>
                     <RegisterPage />
-                </AuthRoute>
+                </AuthRoute> */}
                 {/* <AuthRoute exact path='/home' type='private'>
                     <Home />
                 </AuthRoute> */}
