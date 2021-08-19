@@ -4,6 +4,7 @@ import Home from '../components/Home'
 import RegisterPage from './RegisterPage'
 import LoginPage from './LoginPage'
 import AuthRoute from './AuthRoute'
+import AllSyncs from '../containers/AllSyncs'
 
 //import the containers for the 
 
@@ -14,6 +15,7 @@ const Router = () => {
                 <Route exact path='/' component={ (routeInfo) => <LoginPage routeInfo={routeInfo} />} />
                 {/* <Route exact path='/signup' component={RegisterPage}/> */}
                 <Route exact path='/home' component={Home} />
+                <Route exact path='/connect' component={AllSyncs} />
                 {/* <AuthRoute exact path='/'>
                     <LoginPage />
                 </AuthRoute> */}
