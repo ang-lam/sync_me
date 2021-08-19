@@ -35,22 +35,26 @@ class LoginPage extends Component {
     
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                <label>Email:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="text"
-                        name="email"
-                        value={this.state.email}
-                    /> <br />
-                    <label>Password:</label>
-                    <input
-                        onChange={this.handleFormChange}
-                        type="password"
-                        name="password"
-                        value={this.state.password}
-                    /> <br />
-                    <button type="submit">Login</button>
+                <form onSubmit={this.handleSubmit} className="ui form">
+                    <div className="field">
+                        <label>Email</label>
+                        <input
+                            onChange={this.handleFormChange}
+                            type="text"
+                            name="email"
+                            value={this.state.email}
+                        />
+                    </div>
+                    <div className="field">
+                        <label>Password</label>
+                        <input
+                            onChange={this.handleFormChange}
+                            type="password"
+                            name="password"
+                            value={this.state.password}
+                        />
+                    </div>
+                    <button className="ui button" type="submit">Login</button>
                 </form>
             </div>
         )
