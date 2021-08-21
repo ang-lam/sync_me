@@ -4,7 +4,6 @@ import UserCard from '../components/UserCard'
 
 const AllSyncs = props => {
     //add conditional based off mentee or mentor
-    debugger
     const allCardsJSX = props.user.mentors.map( user => {
         return (
             <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} />
