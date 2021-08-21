@@ -11,7 +11,7 @@ export const usersReducer = (state = initialState, action) => {
         case 'FETCH_USERS':
             return {...state, allUsers: [...action.payload]}
         case 'LOGIN_USER':
-                if (existingUser) {
+                if (!!existingUser) {
                     console.log('existing', existingUser)
                     const removedUser = state.allUsers.filter( user => user.id !== existingUser.id)
                     return {...state, 
@@ -20,7 +20,7 @@ export const usersReducer = (state = initialState, action) => {
                             loggedIn: true 
                         }
                 } else {
-                    return {...state, currentUser: action.payload}
+                    return {...state, currentUser: action.payload, loggedIn: true}
                 }; 
         case 'LOG_USER':
             return {...state, loggedIn: !state.loggedIn}
