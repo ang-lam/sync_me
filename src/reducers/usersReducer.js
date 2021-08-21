@@ -16,7 +16,7 @@ export const usersReducer = (state = initialState, action) => {
                     const removedUser = state.allUsers.filter( user => user.id !== existingUser.id)
                     return {...state, 
                             allUsers: removedUser,
-                            currentUser: action.payload,
+                            currentUser: existingUser,
                             loggedIn: true 
                         }
                 } else {
