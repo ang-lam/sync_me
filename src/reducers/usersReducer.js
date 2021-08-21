@@ -1,7 +1,8 @@
 
 const initialState = {
     allUsers: [],
-    currentUser: {}
+    currentUser: {},
+    loggedIn: false
 }
 
 export const usersReducer = (state = initialState, action) => {
@@ -15,10 +16,14 @@ export const usersReducer = (state = initialState, action) => {
                     const removedUser = state.allUsers.filter( user => user.id !== existingUser.id)
                     return {...state, 
                             allUsers: removedUser,
-                            currentUser: action.payload }
+                            currentUser: action.payload,
+                            loggedIn: true 
+                        }
                 } else {
-                    return {...state, allUsers: state.allUsers.concat(action.payload), currentUser:action.payload}
+                    return {...state, currentUser: action.payload}
                 }; 
+        case 'LOG_USER':
+            return {...state, loggedIn: !state.loggedIn}
         default:
             return state
     }
