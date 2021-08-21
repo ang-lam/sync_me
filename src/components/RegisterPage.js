@@ -49,7 +49,7 @@ class RegisterPage extends Component {
         // })
         // await this.props.registerUser(this.state)
         this.props.registerUser(this.state)
-        this.props.history.push("/home")
+        this.props.routeInfo.history.push('/home')
     }
 
     handleProfilePicture = e => {
