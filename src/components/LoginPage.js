@@ -36,7 +36,7 @@ class LoginPage extends Component {
     
         return (
             <div>
-                <form onSubmit={this.handleSubmit} className="ui form">
+                <form onSubmit={this.handleSubmit} className="ui form segment">
                     <div className="field">
                         <label>Email</label>
                         <input
@@ -55,9 +55,10 @@ class LoginPage extends Component {
                             value={this.state.password}
                         />
                     </div>
-                    <button className="ui button" type="submit">Login</button>
+                    <button className="ui button" type="submit">Login</button> <br /><br />
+                    Don't have an account? Register <Link to='/signup'>here</Link>!
                 </form>
-                Don't have an account? Register <Link to='/signup'>here</Link>!
+                
             </div>
         )
     }
