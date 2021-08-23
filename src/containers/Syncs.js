@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import UserCard from '../components/UserCard'
 
-const AllSyncs = props => {
+const Syncs = props => {
     //add conditional based off mentee or mentor
-    const allCardsJSX = props.user.mentors.map( user => {
+    const allCardsJSX = props.user.followed.map( user => {
         return (
             <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} email={user.email} button="REMOVE"/>
         )
@@ -21,4 +21,4 @@ const mapDispatchToProps = state => {
     return ({user: state.users.currentUser})
 }
 
-export default connect(mapDispatchToProps)(AllSyncs)
+export default connect(mapDispatchToProps)(Syncs)
