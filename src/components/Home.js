@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import UserCard from './UserCard';
 
 const Home = (props) => {
@@ -9,7 +10,7 @@ const Home = (props) => {
         <div className="ui link cards">
             { props.loggedIn ? 
             < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/> :
-            null
+            < Redirect to='/' />
             //add redirect if not logged in
             }
 
