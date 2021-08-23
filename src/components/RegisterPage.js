@@ -104,6 +104,16 @@ class RegisterPage extends Component {
                             value={this.state.bio}
                         />
                     </div>
+
+                    {/* <div className="inline fields">
+                        <label>Role</label>
+                        <div className="field">
+                            <div className="ui radio checkbox">
+                                <input type="radio" name="role" value="Mentor" checked="" tabindex="0" className="hidden" />
+                            </div>
+                        </div>
+                    </div> */}
+
                     <div className="field">
                         <label>Email</label>
                         <input
