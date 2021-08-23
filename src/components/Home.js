@@ -11,6 +11,7 @@ const Home = (props) => {
             { props.loggedIn ? 
             < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/> :
             null
+            //redirect runs before state is updated
             //add redirect if not logged in
             }
 
