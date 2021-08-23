@@ -22,7 +22,6 @@ class NavBar extends Component {
                 <Link to='/syncs'>Users Syncs</Link> |
                 <Link to='/connect'>Sync</Link> |
                 <Link to='/'>Login for testing - will delete</Link> |
-                <Link to='/signup'>Signup</Link> |
                 {this.props.loggedIn ? <Link to='/' onClick={this.handleClick}>Logout</Link> : null}
                 {/* <button onClick={this.handleClick}>Logout</button> */}
             </div>

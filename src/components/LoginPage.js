@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import { login } from '../actions/usersActions'
 import { fetchUsers } from '../actions/usersActions'
 
@@ -56,6 +57,7 @@ class LoginPage extends Component {
                     </div>
                     <button className="ui button" type="submit">Login</button>
                 </form>
+                Don't have an account? Register <Link to='/signup'>here</Link>!
             </div>
         )
     }
