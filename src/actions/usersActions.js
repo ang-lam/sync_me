@@ -38,6 +38,8 @@ export const registerUser = user => {
     }
 }
 
+export const logoutUser = () => ({ type: 'LOGOUT_USER' })
+
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
     payload: userObj
