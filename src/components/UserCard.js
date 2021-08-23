@@ -17,10 +17,13 @@ const UserCard = props => {
                 </div>
             </div>
             <div className="extra content">
+                <span className="left floated">
+                    {props.email}
+                </span>
                 <span className="right floated">
                     <button className="ui basic button">
                         <i class="icon user"></i>
-                        SYNC
+                        {props.button}
                     </button>
                 </span>
             </div>

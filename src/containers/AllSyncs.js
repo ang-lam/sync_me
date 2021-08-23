@@ -6,7 +6,7 @@ const AllSyncs = props => {
 
     const allCardsJSX = props.users.map( user => {
         return (
-            <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} />
+            <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} button="SYNC" />
         )
     })
     return (
