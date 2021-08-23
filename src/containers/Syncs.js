@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import UserCard from '../components/UserCard'
+import SyncedCard from '../components/SyncedCard'
 
 const AllSyncs = props => {
     //add conditional based off mentee or mentor
     const allCardsJSX = props.user.mentors.map( user => {
         return (
-            <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} />
+            <SyncedCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} email={user.email}/>
         )
     })
     return (
