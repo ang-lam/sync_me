@@ -21,10 +21,9 @@ class NavBar extends Component {
                 <Link to='/home'>Home</Link> |
                 <Link to='/syncs'>Users Syncs</Link> |
                 <Link to='/connect'>Sync</Link> |
-                <Link to='/'>Login for test</Link> |
+                <Link to='/'>Login for testing - will delete</Link> |
                 <Link to='/signup'>Signup</Link> |
-                {/* conditionally render logout button and other buttons with ternary*/}
-                <Link to='/' onClick={this.handleClick}>Logout</Link>
+                {this.props.loggedIn ? <Link to='/' onClick={this.handleClick}>Logout</Link> : null}
                 {/* <button onClick={this.handleClick}>Logout</button> */}
             </div>
         )
@@ -32,4 +31,8 @@ class NavBar extends Component {
     
 }
 
-export default connect(null, { logoutUser })(NavBar)
+const mapStateToProps = state => {
+    return ({loggedIn: state.users.loggedIn})
+}
+
+export default connect(mapStateToProps, { logoutUser })(NavBar)
