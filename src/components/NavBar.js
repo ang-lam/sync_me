@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Redirect } from "react-router-dom"
 import { logoutUser } from '../actions/usersActions'
 
 class NavBar extends Component {
     handleClick = e => {
         e.preventDefault()
         //remove token from localStorage
-        localStorage.removeItem('token')
+        localStorage.removeItem('token');
         //remove user object from redux store
-        this.props.logoutUser()
+        this.props.logoutUser();
+        //redirect to login page!!!!!!!
+ 
+
     }
 
     render(){
@@ -20,7 +24,9 @@ class NavBar extends Component {
                 <Link to='/connect'>Sync</Link> |
                 <Link to='/'>Login for test</Link> |
                 <Link to='/signup'>Signup</Link> |
-                <button onClick={this.handleClick}>Logout</button>
+                {/* conditionally render logout button and other buttons with ternary*/}
+                <Link to='/' onClick={this.handleClick}>Logout</Link>
+                {/* <button onClick={this.handleClick}>Logout</button> */}
             </div>
         )
     }
