@@ -23,8 +23,10 @@ export const usersReducer = (state = initialState, action) => {
                 } else {
                     return {...state, currentUser: action.payload, loggedIn: true}
                 }; 
-        case 'LOG_USER':
+        case 'LOG_USER': //remove this?
             return {...state, loggedIn: !state.loggedIn}
+        case 'LOGOUT_USER':
+            return {...state, currentUser: {}, loggedIn: false}
         default:
             return state
     }
