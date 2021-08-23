@@ -14,8 +14,9 @@ export const usersReducer = (state = initialState, action) => {
             const existingUser = state.allUsers.find(user => user.id === action.payload.id)
                 if (!!existingUser) {
                     console.log('existing', existingUser)
-                    const removedUser = state.allUsers.filter( user => user.id !== existingUser.id)
-                    //remove associated users from all usersArray
+                    const removedUser = state.allUsers.filter( user => {
+                        const userIds = existingUser.followed.map ( user => user.id)
+                        return !userIds.includes(user.id) && user !== existingUser})
                     return {...state, 
                             allUsers: removedUser,
                             currentUser: existingUser,
