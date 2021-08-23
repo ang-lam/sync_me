@@ -10,7 +10,7 @@ const Home = (props) => {
         <div className="ui link cards">
             { props.loggedIn ? 
             < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/> :
-            < Redirect to='/' />
+            null
             //add redirect if not logged in
             }
 
