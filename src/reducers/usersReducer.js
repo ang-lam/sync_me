@@ -29,6 +29,9 @@ export const usersReducer = (state = initialState, action) => {
             return {...state, loggedIn: !state.loggedIn}
         case 'LOGOUT_USER':
             return {...state, currentUser: {}, loggedIn: false}
+        case 'FOLLOW_USER':
+            const removeUser = state.allUsers.filter( user => user.id !== action.payload.followed_id)
+            return {...state, allUsers: removeUser}
         default:
             return state
     }

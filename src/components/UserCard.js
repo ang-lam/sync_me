@@ -1,9 +1,16 @@
 import React from 'react'
 
 const UserCard = props => {
+
+    const handleClick = e => {
+        debugger
+        //dispatch action -> give it innerText 
+        // e.target.innerText === "SYNC" ? //dispatch to action
+    }
+
     return (
         //className='ui link cards' for wrapping component
-        <div class="card" key={props.id}>
+        <div className="card" key={props.id}>
             <div className="image">
                 <img src="https://i.pinimg.com/originals/28/d4/62/28d462f90eca234062f8a2ebba8c8fe1.jpg" alt="avatar"/>
             </div>
@@ -21,7 +28,7 @@ const UserCard = props => {
                     {props.email}
                 </span>
                 <span className="right floated">
-                    <button className="ui basic button">
+                    <button className="ui basic button" onClick={(e) => props.handleButton(e.target.innerText, props.id, props.currentUser.id)}>
                         <i class="icon user"></i>
                         {props.button}
                     </button>

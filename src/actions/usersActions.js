@@ -40,6 +40,26 @@ export const registerUser = user => {
 
 export const logoutUser = () => ({ type: 'LOGOUT_USER' })
 
+export const buttonAction = (button, followedId, followerId) => {
+    const connection = {
+        followed_id: followedId,
+        follower_id: followerId
+    }
+    if(button === 'SYNC'){
+        return dispatch => {
+            fetch('http://127.0.0.1:3000/connections', {
+            method: 'POST',
+            body: JSON.stringify({connection}),
+            headers: { 'Content-Type': 'application/json'}
+            })
+            .then (resp => resp.json())
+            .then (data => {
+                dispatch({ type: 'FOLLOW_USER', payload: data})
+            })
+        }
+    }
+}
+
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
     payload: userObj

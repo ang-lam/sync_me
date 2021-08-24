@@ -1,14 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import UserCard from '../components/UserCard'
+import { buttonAction } from '../actions/usersActions'
 
 const AllSyncs = props => {
 
-    const allCardsJSX = props.users.map( user => {
+    const allCardsJSX = props.usersState.allUsers.map( user => {
         return (
-            <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} button="SYNC" />
+            <UserCard id={user.id} firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} button="SYNC" handleButton={props.buttonAction} currentUser={props.usersState.currentUser} />
         )
     })
+
+    //import action here 
     return (
         <div className="ui link cards">
             {allCardsJSX}
@@ -17,7 +20,7 @@ const AllSyncs = props => {
 }
 
 const mapStateToProps = state => {
-    return ({users: state.users.allUsers})
+    return ({usersState: state.users})
 }
 
-export default connect(mapStateToProps)(AllSyncs)
+export default connect(mapStateToProps, {buttonAction})(AllSyncs)
