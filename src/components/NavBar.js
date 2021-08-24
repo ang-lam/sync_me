@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/usersActions'
 
@@ -22,7 +22,7 @@ class NavBar extends Component {
                 <Link to='/syncs'>Users Syncs</Link> |
                 <Link to='/connect'>Sync</Link> |
                 <Link to='/'>Login for testing - will delete</Link> |
-                {this.props.loggedIn ? <Link to='/' onClick={this.handleClick}>Logout</Link> : null}
+                {this.props.loggedIn ? <Link to='/logout'>Logout</Link> : null}
                 {/* <button onClick={this.handleClick}>Logout</button> */}
             </div>
         )
