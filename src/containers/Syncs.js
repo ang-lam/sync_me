@@ -16,9 +16,9 @@ const Syncs = props => {
     )
 }
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
     // return ({users: state.users.allUsers})
     return ({user: state.users.currentUser})
 }
 
-export default connect(mapDispatchToProps)(Syncs)
+export default connect(mapStateToProps)(Syncs)
