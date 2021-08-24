@@ -21,15 +21,16 @@ export const usersReducer = (state = initialState, action) => {
                     return {...state, 
                             allUsers: removedUser,
                             currentUser: existingUser,
-                            loggedIn: true 
+                            loggedIn: true,
+                            followed: existingUser.followed
                         }
                 } else {
                     return {...state, currentUser: action.payload, loggedIn: true}
                 }; 
         case 'LOG_USER': //remove this?
-            return {...state, loggedIn: !state.loggedIn}
+            return {...state, loggedIn: !state.loggedIn, followed: []}
         case 'LOGOUT_USER':
-            return {...state, currentUser: {}, loggedIn: false}
+            return {...state, currentUser: {}, loggedIn: false, followed: []}
         case 'FOLLOW_USER':
             const removeUser = state.allUsers.filter( user => user.id !== action.payload.connection.followed_id)
             return {...state, allUsers: removeUser, followed: [...state.followed, action.payload.user]}
