@@ -4,7 +4,7 @@ import UserCard from '../components/UserCard'
 
 const Syncs = props => {
     //add conditional based off mentee or mentor
-    const allCardsJSX = props.user.followed.map( user => {
+    const allCardsJSX = props.followed.map( user => {
         return (
             <UserCard key={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} email={user.email} button="REMOVE"/>
         )
@@ -18,7 +18,7 @@ const Syncs = props => {
 
 const mapStateToProps = state => {
     // return ({users: state.users.allUsers})
-    return ({user: state.users.currentUser})
+    return ({followed: state.users.followed})
 }
 
 export default connect(mapStateToProps)(Syncs)
