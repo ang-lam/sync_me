@@ -2,12 +2,6 @@ import React from 'react'
 
 const UserCard = props => {
 
-    const handleClick = e => {
-        debugger
-        //dispatch action -> give it innerText 
-        // e.target.innerText === "SYNC" ? //dispatch to action
-    }
-
     return (
         //className='ui link cards' for wrapping component
         <div className="card" key={props.id}>
