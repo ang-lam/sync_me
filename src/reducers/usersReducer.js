@@ -34,7 +34,12 @@ export const usersReducer = (state = initialState, action) => {
         case 'FOLLOW_USER':
             const removeUser = state.allUsers.filter( user => user.id !== action.payload.connection.followed_id)
             return {...state, allUsers: removeUser, followed: [...state.followed, action.payload.user]}
-        default:
+        case 'UNFOLLOW_USER':
+            //add removed user back to allUsers and remove from followed
+            const unfollowedUser = state.followed.find ( user => user.id === action.payload )
+            const updatedFollowed = state.followed.filter( user => user.id !== action.payload)
+            return {...state, allUsers: [...state.allUsers, unfollowedUser], followed: updatedFollowed }
+            default:
             return state
     }
 }
