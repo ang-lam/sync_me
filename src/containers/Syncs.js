@@ -12,7 +12,7 @@ const Syncs = props => {
     return (
         <div className="ui link cards">
             { props.loggedIn ?
-            {allCardsJSX} :
+            allCardsJSX :
             props.history.push('/')
             }
         </div>
