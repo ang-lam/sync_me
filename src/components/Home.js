@@ -9,7 +9,7 @@ const Home = (props) => {
         <div className="ui link cards">
             { props.loggedIn ? 
             < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/> :
-            props.history.push('/')
+            null
             }
 
         </div>
