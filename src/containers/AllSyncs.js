@@ -14,7 +14,10 @@ const AllSyncs = props => {
     //import action here 
     return (
         <div className="ui link cards">
-            {allCardsJSX}
+            { props.usersState.loggedIn ?
+            {allCardsJSX} :
+            props.history.push('/')
+            }
         </div>
     )
 }
