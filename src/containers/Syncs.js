@@ -11,14 +11,17 @@ const Syncs = props => {
     })
     return (
         <div className="ui link cards">
-            {allCardsJSX}
+            { props.loggedIn ?
+            {allCardsJSX} :
+            props.history.push('/')
+            }
         </div>
     )
 }
 
 const mapStateToProps = state => {
     // return ({users: state.users.allUsers})
-    return ({followed: state.users.followed})
+    return ({followed: state.users.followed, loggedIn: state.users.loggedIn})
 }
 
 export default connect(mapStateToProps)(Syncs)
