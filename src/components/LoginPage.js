@@ -12,7 +12,9 @@ class LoginPage extends Component {
     }
 
     componentDidMount(){
-        this.props.fetchUsers()
+        if (!this.props.user.loggedIn) {
+            this.props.fetchUsers()
+        }
         // if (this.props.user.currentUser !== {}){
         //     this.props.routeInfo.history.push('/home')
         // }
