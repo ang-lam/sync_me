@@ -19,8 +19,8 @@ class NavBar extends Component {
         return (
             <div className="ui segment">
                 <Link to='/home'>Home</Link> |
-                <Link to='/syncs'>Users Syncs</Link> |
-                <Link to='/connect'>Sync</Link> |
+                <Link to='/followed'>Users Syncs</Link> |
+                <Link to='/users'>Find A Sync</Link> |
                 <Link to='/'>Login for testing - will delete</Link> |
                 {this.props.loggedIn ? <Link to='/logout'>Logout</Link> : null}
                 {/* <button onClick={this.handleClick}>Logout</button> */}

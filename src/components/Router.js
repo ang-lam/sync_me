@@ -17,9 +17,9 @@ const Router = () => {
                 <Route exact path='/' component={ (routeInfo) => <LoginPage routeInfo={routeInfo} />} />
                 {/* <Route exact path='/signup' component={RegisterPage}/> */}
                 <Route exact path='/home' component={Home} />
-                <Route exact path='/connect' component={AllSyncs} />
+                <Route exact path='/users' component={AllSyncs} />
                 <Route exact path='/signup' component={ (routeInfo) => <RegisterPage routeInfo={routeInfo} />} />
-                <Route exact path='/syncs' component={Syncs} />
+                <Route exact path='/followed' component={Syncs} />
                 <Route exact path='/logout' component={Logout} />
                 {/* <AuthRoute exact path='/'>
                     <LoginPage />
