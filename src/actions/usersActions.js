@@ -57,18 +57,19 @@ export const buttonAction = (button, followedId, followerId) => {
                 dispatch({ type: 'FOLLOW_USER', payload: data})
             })
         }   
-    } else if(button === 'UNFOLLOW'){
-        return dispatch => {
-            fetch(`http://127.0.0.1:3000/connections/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(resp => resp.json())
-            .then(json => alert(json.message))
-        }
     }
+    // else if(button === 'UNFOLLOW'){
+    //     return dispatch => {
+    //         fetch(`http://127.0.0.1:3000/connections/${id}`, {
+    //             method: 'DELETE',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             }
+    //         })
+    //         .then(resp => resp.json())
+    //         .then(json => alert(json.message))
+    //     }
+    // }
 }
 
 const loginUser = userObj => ({
