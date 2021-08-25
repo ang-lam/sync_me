@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import UserCard from './UserCard';
 
 const Home = (props) => {
@@ -11,8 +10,6 @@ const Home = (props) => {
             { props.loggedIn ? 
             < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/> :
             props.history.push('/')
-            //redirect runs before state is updated
-            //add redirect if not logged in
             }
 
         </div>
