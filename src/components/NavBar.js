@@ -18,12 +18,39 @@ class NavBar extends Component {
     render(){
         return (
             <div className="ui segment">
-                <Link to='/home'>Home</Link> |
-                <Link to='/followed'>Users Syncs</Link> |
-                <Link to='/users'>Find A Sync</Link> |
-                <Link to='/'>Login for testing - will delete</Link> |
-                {this.props.loggedIn ? <Link to='/logout'>Logout</Link> : null}
-                {/* <button onClick={this.handleClick}>Logout</button> */}
+                <div className="ui top visible horizontal sidebar labeled icon menu">
+                    <div className="item">
+                        <div className="home icon">
+                            <Link to='/home'>Home</Link>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className="home icon">
+                            <Link to='/followed'>Synced</Link>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className="home icon">
+                            <Link to='/users'>Find A Sync</Link>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className="home icon">
+                            <Link to='/'>Login</Link>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className="home icon">
+                            {this.props.loggedIn ? <Link to='/logout'>Logout</Link> : null}
+                            {/* <button onClick={this.handleClick}>Logout</button> */}
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
             </div>
         )
     }
