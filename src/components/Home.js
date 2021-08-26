@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import InputField from './InputField';
 import Post from './Post';
 
 const Home = (props) => {
@@ -14,6 +15,7 @@ const Home = (props) => {
 
     return (
         <div className="ui large feed">
+            < InputField />
             { props.loggedIn ? 
             postsJSX : 
             null
