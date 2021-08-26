@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import Post from './Post';
-import UserCard from './UserCard';
 
 const Home = (props) => {
     const followedIds = props.followed.map ( user => user.id )
@@ -14,13 +13,11 @@ const Home = (props) => {
     })
 
     return (
-        //className="ui large feed"
         <div className="ui large feed">
             { props.loggedIn ? 
             postsJSX : 
             null
             }
-
         </div>
     )
 }
