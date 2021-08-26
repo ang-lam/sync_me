@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { login } from '../actions/usersActions'
 import { fetchUsers } from '../actions/usersActions'
+import { fetchPosts } from '../actions/postsActions'
 
 class LoginPage extends Component {
 
@@ -14,6 +15,7 @@ class LoginPage extends Component {
     componentDidMount(){
         if (!this.props.user.loggedIn) {
             this.props.fetchUsers()
+            this.props.fetchPosts()
         }
         // if (this.props.user.currentUser !== {}){
         //     this.props.routeInfo.history.push('/home')
@@ -72,7 +74,8 @@ class LoginPage extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         login: userInfo => dispatch(login(userInfo)),
-        fetchUsers: () => dispatch(fetchUsers())
+        fetchUsers: () => dispatch(fetchUsers()),
+        fetchPosts: () => dispatch(fetchPosts())
     }
 }
 
