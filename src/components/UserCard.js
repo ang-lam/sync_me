@@ -4,7 +4,7 @@ const UserCard = props => {
 
     return (
         //className='ui link cards' for wrapping component
-        <div className="card" key={props.id}>
+        <div className="card">
             <div className="image">
                 <img src="https://i.pinimg.com/originals/28/d4/62/28d462f90eca234062f8a2ebba8c8fe1.jpg" alt="avatar"/>
             </div>
