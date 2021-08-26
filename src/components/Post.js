@@ -10,7 +10,7 @@ const Post = props => {
                     <span className="date">
                         3 days ago
                     </span>
-                <div className="text">
+                <div className="ui segment">
                     <h4>{props.content}</h4>
                 </div>
             </div>
