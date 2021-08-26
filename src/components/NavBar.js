@@ -17,7 +17,7 @@ class NavBar extends Component {
 
     render(){
         return (
-            <div className="ui segment">
+            <div className="ui segment padded">
                 <div className="ui top visible horizontal sidebar labeled icon menu">
                     <div className="item">
                         <div className="home icon">
