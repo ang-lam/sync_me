@@ -1,14 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import Post from './Post';
 import UserCard from './UserCard';
 
 const Home = (props) => {
-    console.log('home:', props)
-    const {firstName, lastName, company, bio} = props.user
+    const followedIds = props.followed.map ( user => user.id )
+    const followedPosts = props.posts.filter( post => {
+        return followedIds.includes(post.user_id) || post.user_id === props.user.id
+    })
+    const postsJSX = followedPosts.map(post => {
+        return <Post key={post.id} userId={post.user_id} content={post.content} user={post.user}/>
+    })
+
     return (
-        <div className="ui link cards">
+        //className="ui large feed"
+        <div className="ui large feed">
             { props.loggedIn ? 
-            < UserCard firstName={firstName} lastName={lastName} company={company} bio={bio}/> :
+            postsJSX : 
             null
             }
 
@@ -17,7 +25,11 @@ const Home = (props) => {
 }
 
 const mapStateToProps = state => {
-    return ({user: state.users.currentUser, loggedIn: state.users.loggedIn})
+    return ({user: state.users.currentUser,
+            followed: state.users.followed, 
+            loggedIn: state.users.loggedIn,
+            posts: state.posts.posts
+    })
 }
 
 export default connect(mapStateToProps)(Home)
