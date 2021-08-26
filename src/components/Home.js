@@ -8,7 +8,8 @@ const Home = (props) => {
     const followedPosts = props.posts.filter( post => {
         return followedIds.includes(post.user_id) || post.user_id === props.user.id
     })
-    const postsJSX = followedPosts.map(post => {
+    const chronologicalPosts = followedPosts.reverse()
+    const postsJSX = chronologicalPosts.map(post => {
         return <Post key={post.id} userId={post.user_id} content={post.content} user={post.user}/>
     })
 
