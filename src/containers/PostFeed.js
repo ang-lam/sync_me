@@ -18,7 +18,7 @@ const PostFeed = (props) => {
             < InputField />
             { props.loggedIn ? 
             postsJSX : 
-            null
+            props.history.push('/')
             }
         </div>
     )
