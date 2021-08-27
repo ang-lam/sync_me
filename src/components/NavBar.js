@@ -18,43 +18,48 @@ class NavBar extends Component {
     render(){
         return (
             <div className="ui segment padded">
-                <div className="ui top visible horizontal sidebar labeled icon menu">
-                    <div className="item">
-                        <div className="home icon">
-                            <Link to='/'>Home</Link>
-                        </div>
+            <div className="ui top visible horizontal sidebar labeled icon menu">
+                <div className="item">
+                    <div className="home icon">
+                        <Link to='/'>Home</Link>
                     </div>
-                    <div className="item">
-                        <div className="home icon">
-                            <Link to='/posts'>Feed</Link>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="home icon">
-                            <Link to='/followed'>Synced</Link>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div className="home icon">
-                            <Link to='/users'>Find A Sync</Link>
-                        </div>
-                    </div>
-                    {this.props.loggedIn ?
-                    <div className="item">
-                        <div className="home icon">
-                            <Link to='/logout'>Logout</Link>
-                            {/* <button onClick={this.handleClick}>Logout</button> */}
-                        </div>
-                    </div> 
-                    : null
-                    }
-                    
-                    
-                    
-                    
-                    
                 </div>
+                {!this.props.loggedIn ? 
+                    <div className="item">
+                        <div className="home icon">
+                            <Link to='/signup'>Register</Link>
+                        </div>
+                    </div>
+                    : null
+                }
+                
+                {this.props.loggedIn ?
+                    <>
+                        <div className="item">
+                            <div className="home icon">
+                                <Link to='/posts'>Feed</Link>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="home icon">
+                                <Link to='/followed'>Synced</Link>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="home icon">
+                                <Link to='/users'>Find A Sync</Link>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="home icon">
+                                <Link to='/logout'>Logout</Link>
+                            </div>
+                         </div>
+                    </>
+                    : null
+                }
             </div>
+        </div>
         )
     }
     
