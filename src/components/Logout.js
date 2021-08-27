@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/usersActions'
+import '../stylesheets/Logout.css'
 
 const Logout = (props) => {
 
@@ -19,9 +20,11 @@ const Logout = (props) => {
 
     return ( 
         <div className="ui segment">
-            <h3>Are you sure you want to logout?</h3>
-            <button className="ui button" onClick={handleYesClick}>Yes</button>
-            <button className="ui button" onClick={handleNoClick}>No</button>
+            <h3><br/>
+                Are you sure you want to logout? <br/> <br/>
+                <button className="ui button" onClick={handleYesClick}>Yes</button>
+                <button className="ui button" onClick={handleNoClick}>No</button>
+            </h3>
         </div>
     )
 }
