@@ -55,6 +55,7 @@ export const buttonAction = (button, followedId, followerId) => {
             .then (resp => resp.json())
             .then (data => {
                 dispatch({ type: 'FOLLOW_USER', payload: data})
+                alert(data.message)
             })
         }   
     }else if(button === 'UNFOLLOW'){
