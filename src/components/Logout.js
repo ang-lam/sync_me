@@ -4,7 +4,7 @@ import { logoutUser } from '../actions/usersActions'
 
 const Logout = (props) => {
 
-    const handleClick = () => {
+    const handleYesClick = () => {
         //remove token from localStorage
         localStorage.removeItem('token');
         //remove user object from redux store
@@ -13,9 +13,15 @@ const Logout = (props) => {
         props.history.push('/')
     }
 
+    const handleNoClick = () => {
+        props.history.push('/posts')
+    }
+
     return ( 
-        <div>
-            <button onClick={handleClick}>Logout</button>
+        <div className="ui segment">
+            <h3>Are you sure you want to logout?</h3>
+            <button className="ui button" onClick={handleYesClick}>Yes</button>
+            <button className="ui button" onClick={handleNoClick}>No</button>
         </div>
     )
 }
