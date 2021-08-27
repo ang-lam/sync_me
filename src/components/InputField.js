@@ -16,7 +16,10 @@ class InputField extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault()
-        this.props.createPost(this.state.input, this.props.user)   
+        this.props.createPost(this.state.input, this.props.user)
+        this.setState({
+            input: ''
+        })   
     }
 
     render() {
