@@ -21,7 +21,7 @@ class NavBar extends Component {
                 <div className="ui top visible horizontal sidebar labeled icon menu">
                     <div className="item">
                         <div className="home icon">
-                            <Link to='/home'>Home</Link>
+                            <Link to='/'>Home</Link>
                         </div>
                     </div>
                     <div className="item">

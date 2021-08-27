@@ -31,7 +31,8 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.login(this.state)
-        this.props.routeInfo.history.push('/home')
+        // this.props.routeInfo.history.push('/home')
+        this.props.redirect()
         
     }
 

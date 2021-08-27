@@ -15,9 +15,9 @@ const Router = () => {
     return (
         <div>
             <Switch>
-                <Route exact path='/' component={ (routeInfo) => <Login routeInfo={routeInfo} />} />
+                {/* <Route exact path='/' component={ (routeInfo) => <Login routeInfo={routeInfo} />} /> */}
                 {/* <Route exact path='/signup' component={RegisterPage}/> */}
-                <Route exact path='/home' component={Home} />
+                <Route exact path='/' component={ (routeInfo) => <Home routeInfo={routeInfo} />} />
                 <Route exact path='/users' component={AllSyncs} />
                 <Route exact path='/signup' component={ (routeInfo) => <RegisterPage routeInfo={routeInfo} />} />
                 <Route exact path='/followed' component={Syncs} />

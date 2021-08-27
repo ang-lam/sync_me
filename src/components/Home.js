@@ -7,7 +7,7 @@ const Home = (props) => {
         <div className="ui large feed">
             
             { !props.loggedIn ? 
-                < Login /> : 
+                < Login redirect={props.routeInfo.history.push('/')}/> : 
                 null
             } {/* a component to render the site info */}
         </div>
