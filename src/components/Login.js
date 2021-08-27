@@ -5,7 +5,7 @@ import { login } from '../actions/usersActions'
 import { fetchUsers } from '../actions/usersActions'
 import { fetchPosts } from '../actions/postsActions'
 
-class LoginPage extends Component {
+class Login extends Component {
 
     state = {
         email: '',
@@ -84,4 +84,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

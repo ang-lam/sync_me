@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Home from '../components/Home'
 import RegisterPage from './RegisterPage'
-import LoginPage from './LoginPage'
+import Login from './Login'
 import AuthRoute from './AuthRoute'
 import AllSyncs from '../containers/AllSyncs'
 import Syncs from '../containers/Syncs'
@@ -15,7 +15,7 @@ const Router = () => {
     return (
         <div>
             <Switch>
-                <Route exact path='/' component={ (routeInfo) => <LoginPage routeInfo={routeInfo} />} />
+                <Route exact path='/' component={ (routeInfo) => <Login routeInfo={routeInfo} />} />
                 {/* <Route exact path='/signup' component={RegisterPage}/> */}
                 <Route exact path='/home' component={Home} />
                 <Route exact path='/users' component={AllSyncs} />
