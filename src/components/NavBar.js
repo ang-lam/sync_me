@@ -39,11 +39,6 @@ class NavBar extends Component {
                             <Link to='/users'>Find A Sync</Link>
                         </div>
                     </div>
-                    <div className="item">
-                        <div className="home icon">
-                            <Link to='/'>Login</Link>
-                        </div>
-                    </div>
                     {this.props.loggedIn ?
                     <div className="item">
                         <div className="home icon">
