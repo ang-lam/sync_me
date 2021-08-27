@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logoutUser } from '../actions/usersActions'
 
@@ -39,12 +39,15 @@ class NavBar extends Component {
                             <Link to='/'>Login</Link>
                         </div>
                     </div>
+                    {this.props.loggedIn ?
                     <div className="item">
                         <div className="home icon">
-                            {this.props.loggedIn ? <Link to='/logout'>Logout</Link> : null}
+                            <Link to='/logout'>Logout</Link>
                             {/* <button onClick={this.handleClick}>Logout</button> */}
                         </div>
-                    </div>
+                    </div> 
+                    : null
+                    }
                     
                     
                     
