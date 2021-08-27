@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { login } from '../actions/usersActions'
 import { fetchUsers } from '../actions/usersActions'
 import { fetchPosts } from '../actions/postsActions'
+import AppInfo from './AppInfo';
 
 class Login extends Component {
 
@@ -62,10 +63,7 @@ class Login extends Component {
                     <button className="ui button" type="submit">Login</button> <br /><br />
                     Don't have an account? Register <Link to='/signup'>here</Link>!
                 </form>
-                <div className="ui segment">
-                    <h3>SYNC ME</h3>
-                    <p>This will be description for application</p>
-                </div>
+                <AppInfo />
             </div>
         )
     }
