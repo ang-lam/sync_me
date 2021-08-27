@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { createPost } from '../actions/postsActions'
 
 class InputField extends Component {
 
@@ -14,7 +16,7 @@ class InputField extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault()
-        this.props.onSearchSubmit(this.state.input)   
+        this.props.createPost(this.state.input, this.props.user)   
     }
 
     render() {
@@ -35,4 +37,8 @@ class InputField extends Component {
     }
 }
 
-export default InputField
+const mapStateToProps = state => {
+    return ({user: state.users.currentUser})
+}
+
+export default connect(mapStateToProps, { createPost })(InputField)
