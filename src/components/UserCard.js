@@ -23,7 +23,7 @@ const UserCard = props => {
                 </span>
                 <span className="right floated">
                     <button className="ui basic button" onClick={(e) => props.handleButton(e.target.innerText, props.id, props.currentUser.id)}>
-                        <i class="icon user"></i>
+                        <i className="icon user"></i>
                         {props.button}
                     </button>
                 </span>
