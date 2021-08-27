@@ -11,10 +11,13 @@ const Syncs = props => {
             <UserCard id={user.id}firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} email={user.email} handleButton={props.buttonAction} button="UNFOLLOW" currentUser={props.currentUser}/>
         )
     })
+
+    const noFollowed = props.followed.length !== 0 ? allCardsJSX : alert('You are not following anyone! Go to Find A Sync to follow people!')
+
     return (
         <div className="ui link cards">
             { props.loggedIn ?
-            allCardsJSX :
+            noFollowed :
             props.history.push('/')
             }
         </div>
