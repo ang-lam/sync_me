@@ -132,14 +132,14 @@ class RegisterPage extends Component {
                             value={this.state.password}
                         />
                     </div>
-                    <label>Profile Picture:</label>
-                    <input
+                    {/* <label>Profile Picture:</label> */}
+                    {/* <input
                         onChange={this.handleProfilePicture}
                         type="file"
                         accept="/images/*"
                         name="picture"
                         // value={this.state.picture}
-                    /> <br />
+                    /> <br /> */}
                     <button className="ui button" type="submit">Register</button>
                 </form>
             </div>
