@@ -6,7 +6,11 @@ export const fetchPosts = () => {
     }
 }
 
-export const createPost = post => {
+export const createPost = (content, user) => {
+    const post = {
+        user_id: user.id,
+        content: content
+    }
     return dispatch => {
         fetch('http://127.0.0.1:3000/posts', {
             method: 'POST',
