@@ -26,6 +26,11 @@ class NavBar extends Component {
                     </div>
                     <div className="item">
                         <div className="home icon">
+                            <Link to='/posts'>Feed</Link>
+                        </div>
+                    </div>
+                    <div className="item">
+                        <div className="home icon">
                             <Link to='/followed'>Synced</Link>
                         </div>
                     </div>

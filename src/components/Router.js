@@ -7,6 +7,7 @@ import AuthRoute from './AuthRoute'
 import AllSyncs from '../containers/AllSyncs'
 import Syncs from '../containers/Syncs'
 import Logout from './Logout';
+import PostFeed from '../containers/PostFeed'
 
 //import the containers for the 
 
@@ -21,6 +22,7 @@ const Router = () => {
                 <Route exact path='/signup' component={ (routeInfo) => <RegisterPage routeInfo={routeInfo} />} />
                 <Route exact path='/followed' component={Syncs} />
                 <Route exact path='/logout' component={Logout} />
+                <Route exact path='/posts' component={PostFeed} />
                 {/* <AuthRoute exact path='/'>
                     <LoginPage />
                 </AuthRoute> */}
