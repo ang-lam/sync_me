@@ -9,6 +9,7 @@ const Chat = () => {
         //send button should make a post request to backend to create new message with sender_id === currentUser.id and recipient_id === followed_id
         //chat should be class component with state? need to send following user ID as prop? to chat component 
         <div>
+        
             
         </div>
     )
