@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { login } from '../actions/usersActions'
 import { fetchUsers } from '../actions/usersActions'
 import { fetchPosts } from '../actions/postsActions'
+import { fetchMessages } from '../actions/messagesAction';
 import AppInfo from './AppInfo';
 
 class Login extends Component {
@@ -17,6 +18,7 @@ class Login extends Component {
         if (!this.props.user.loggedIn) {
             this.props.fetchUsers()
             this.props.fetchPosts()
+            this.props.fetchMessages()
         }
         // if (this.props.user.currentUser !== {}){
         //     this.props.routeInfo.history.push('/home')
@@ -73,7 +75,8 @@ const mapDispatchToProps = dispatch => {
     return {
         login: userInfo => dispatch(login(userInfo)),
         fetchUsers: () => dispatch(fetchUsers()),
-        fetchPosts: () => dispatch(fetchPosts())
+        fetchPosts: () => dispatch(fetchPosts()),
+        fetchMessages: () => dispatch(fetchMessages())
     }
 }
 
