@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Message from './Message'
 
 const Chat = props => {
     //button will direct to chat route
     const relatedMessages = props.messages.filter( message => message.sender_id === props.currentUser.id && message.recipient_id === props.followedId) //pass followedID as prop from button
     const messagesJSX = relatedMessages.map( message => {
-        return <Message />
+        return <Message key={message.id} content={message.content}/>
     })
 
     return (
