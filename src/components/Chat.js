@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Message from './Message'
+import InputField from './InputField'
 
 const Chat = props => {
     //button will direct to chat route
@@ -9,7 +10,7 @@ const Chat = props => {
     // const relatedMessages = currentUsersMessages.concat(followedUsersMessages)
     const relatedMessages = currentUsersMessages.filter( message => message.sender_id === props.location.state.followedId || message.recipient_id === props.location.state.followedId)
     const messagesJSX = relatedMessages.map( message => {
-        return <Message key={message.id} content={message.content}/>
+        return <Message key={message.id} content={message.content} sender={message.sender}/>
     })
 
     return (
@@ -24,7 +25,9 @@ const Chat = props => {
         //chat component should be displaying all the messages between two users after clicking message button
         //update state after posting new messsage to render new message
         <div>
+            
             {messagesJSX}
+            <InputField />
         
             
         </div>
