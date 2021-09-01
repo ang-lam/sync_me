@@ -1,6 +1,7 @@
 import React from 'react'
 
 const UserCard = props => {
+    
 
     return (
         //className='ui link cards' for wrapping component
@@ -20,7 +21,7 @@ const UserCard = props => {
             <div className="extra content">
                 <span className="left floated">
                 {props.messageButton ? 
-                (<button className="ui basic button" onClick={(e) => props.handleButton(e.target.innerText, props.id, props.currentUser.id)}>
+                (<button className="ui basic button" onClick={(e) => props.handleMessageButton(props.id)}>
                         {props.messageButton}
                 </button>) : null
                 }
