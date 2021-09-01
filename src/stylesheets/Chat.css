@@ -1,0 +1,19 @@
+.footer {
+    height:40x;
+    width: 100%; 
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+}
+
+.messages {
+    text-align: left;
+    padding-bottom: 150px;
+}
+
+
+

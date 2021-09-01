@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Message from './Message'
 import InputField from './InputField'
 import { createMessage } from '../actions/messagesAction'
+import '../stylesheets/Chat.css'
 
 const Chat = props => {
     //button will direct to chat route
@@ -18,22 +19,29 @@ const Chat = props => {
         //get all messages from backend and store in store - done
         //iterate through all messages to match the two users through sender_id and user_id -done
         //make a message component that renders each message on the chat page - done
-
-        //have input at bottom of chat page with send button - working on it
+        //have input at bottom of chat page with send button - done
         //send button should make a post request to backend to create new message with sender_id === currentUser.id and recipient_id === followed_id
             //do this by refactoring input field to get a callback as a prop and do dispatch in the container of the input field
+            //done
+        //update state after posting new messsage to render new message -done
+
         //route is /users/id/messages?
-        //update state after posting new messsage to render new message
+        //let users create username to make chat message url to /messages/username
+        //anchor input field at bottom of page
+        //see if can update messages 
+        //messages should have a read attribute? true/false to keep track of alerts
 
         //make inbox component that displays all messages? - do this last
         //if message sender is currentUser send a prop to differentiate else send another prop so can style
-        <div>
-            
-            {messagesJSX}
-            <InputField button="Send" create={props.createMessage} followedId={props.location.state.followedId}/>
-        
-            
-        </div>
+        //check login
+        <>
+            <div className="ui raised segments messages">  
+                {messagesJSX}   
+            </div>
+            <div className="footer">
+                <InputField button="Send" create={props.createMessage} followedId={props.location.state.followedId}/>
+            </div>
+        </>
     )
 }
 
