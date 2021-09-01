@@ -15,7 +15,7 @@ class InputField extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault()
-        this.props.create(this.state.input, this.props.user)
+        this.props.create(this.state.input, this.props.user, this.props.followedId)
         this.setState({
             input: ''
         })   

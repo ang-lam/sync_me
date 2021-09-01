@@ -30,7 +30,7 @@ const Chat = props => {
         <div>
             
             {messagesJSX}
-            <InputField button="Send" create={props.createMessage}/>
+            <InputField button="Send" create={props.createMessage} followedId={props.location.state.followedId}/>
         
             
         </div>

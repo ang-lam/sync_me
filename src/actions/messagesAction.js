@@ -7,9 +7,10 @@ export const fetchMessages = () => {
 }
 
 export const createMessage = (content, sender, recipient) => {
+    debugger
     const message = {
         sender_id: sender.id,
-        recipient_id: recipient.id,
+        recipient_id: recipient,
         content: content
     }
     return dispatch => {
