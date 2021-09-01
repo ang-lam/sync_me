@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Home from '../components/Home'
 import RegisterPage from './RegisterPage'
-import Login from './Login'
 import AuthRoute from './AuthRoute'
 import AllSyncs from '../containers/AllSyncs'
 import Syncs from '../containers/Syncs'
