@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Message from './Message'
 import InputField from './InputField'
+import { createMessage } from '../actions/messagesAction'
 
 const Chat = props => {
     //button will direct to chat route
@@ -29,7 +30,7 @@ const Chat = props => {
         <div>
             
             {messagesJSX}
-            <InputField button="Send"/>
+            <InputField button="Send" create={props.createMessage}/>
         
             
         </div>
@@ -43,4 +44,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps)(Chat)
+export default connect(mapStateToProps, { createMessage })(Chat)

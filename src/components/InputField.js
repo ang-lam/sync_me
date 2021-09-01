@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createPost } from '../actions/postsActions'
 
 class InputField extends Component {
 
@@ -44,4 +43,4 @@ const mapStateToProps = state => {
     return ({user: state.users.currentUser})
 }
 
-export default connect(mapStateToProps, { createPost })(InputField)
+export default connect(mapStateToProps)(InputField)
