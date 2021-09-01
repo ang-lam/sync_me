@@ -50,7 +50,7 @@ class Chat extends Component {
                 <div className="ui raised segments messages">  
                     {messagesJSX}   
                 </div>
-                <div className="footer">
+                <div className="MessageFooter">
                     <InputField button="Send" create={this.props.createMessage} followedId={this.props.location.state.followedId}/>
                 </div>
                 <div style={{ float:"left", clear: "both" }}

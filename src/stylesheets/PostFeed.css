@@ -1,4 +1,4 @@
-.MessageFooter {
+.PostHeader {
     height:40x;
     width: 100%; 
     background-image: none;
@@ -6,14 +6,11 @@
     background-attachment: scroll;
     background-position: 0% 0%;
     position: fixed;
-    bottom: 0pt;
+    top: 0pt;
     left: 0pt;
+    padding-top: 55px;
 }
 
-.messages {
-    text-align: left;
-    padding-bottom: 150px;
+.posts {
+    padding-top: 170px;
 }
-
-
-
