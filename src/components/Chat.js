@@ -20,7 +20,7 @@ const Chat = props => {
         //route is /users/id/messages?
         //chat component should be displaying all the messages between two users after clicking message button
         <div>
-
+            {messagesJSX}
         
             
         </div>

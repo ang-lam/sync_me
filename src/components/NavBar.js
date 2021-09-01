@@ -52,6 +52,11 @@ class NavBar extends Component {
                         </div>
                         <div className="item">
                             <div className="home icon">
+                                <Link to='/messages'>Inbox</Link>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="home icon">
                                 <Link to='/logout'>Logout</Link>
                             </div>
                          </div>
