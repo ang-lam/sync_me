@@ -4,7 +4,10 @@ import Message from './Message'
 
 const Chat = props => {
     //button will direct to chat route
-    const relatedMessages = props.messages.filter( message => message.sender_id === props.currentUser.id && message.recipient_id === props.location.state.followedId) //pass followedID as prop from button
+    const currentUsersMessages = props.messages.filter( message => message.sender_id === props.currentUser.id || message.recipient_id === props.currentUser.id) //pass followedID as prop from button
+    // const followedUsersMessages = props.messages.filter( message => message.sender_id === props.location.state.followedId && message.recipient_id === props.currentUser.id)
+    // const relatedMessages = currentUsersMessages.concat(followedUsersMessages)
+    const relatedMessages = currentUsersMessages.filter( message => message.sender_id === props.location.state.followedId || message.recipient_id === props.location.state.followedId)
     const messagesJSX = relatedMessages.map( message => {
         return <Message key={message.id} content={message.content}/>
     })
@@ -19,6 +22,7 @@ const Chat = props => {
         //chat should be class component with state? need to send following user ID as prop? to chat component 
         //route is /users/id/messages?
         //chat component should be displaying all the messages between two users after clicking message button
+        //update state after posting new messsage to render new message
         <div>
             {messagesJSX}
         
