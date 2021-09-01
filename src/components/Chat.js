@@ -15,19 +15,21 @@ const Chat = props => {
 
     return (
         //get all messages from backend and store in store - done
-        //make inbox component that displays all messages? - do this last
-        //iterate through all messages to match the two users through sender_id and user_id
-        //make a message component that renders each message on the chat page
-        //have input at bottom of chat page with send button 
+        //iterate through all messages to match the two users through sender_id and user_id -done
+        //make a message component that renders each message on the chat page - done
+
+        //have input at bottom of chat page with send button - working on it
         //send button should make a post request to backend to create new message with sender_id === currentUser.id and recipient_id === followed_id
-        //chat should be class component with state? need to send following user ID as prop? to chat component 
+            //do this by refactoring input field to get a callback as a prop and do dispatch in the container of the input field
         //route is /users/id/messages?
-        //chat component should be displaying all the messages between two users after clicking message button
         //update state after posting new messsage to render new message
+
+        //make inbox component that displays all messages? - do this last
+        //if message sender is currentUser send a prop to differentiate else send another prop so can style
         <div>
             
             {messagesJSX}
-            <InputField />
+            <InputField button="Send"/>
         
             
         </div>

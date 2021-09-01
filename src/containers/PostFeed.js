@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import InputField from '../components/InputField';
 import Post from '../components/Post';
+import { createPost } from '../actions/postsActions'
 
 const PostFeed = (props) => {
     const followedIds = props.followed.map ( user => user.id )
@@ -15,7 +16,7 @@ const PostFeed = (props) => {
 
     return (
         <div className="ui large feed">
-            < InputField />
+            <InputField button="Post" create={props.createPost} prompt="What's on your mind?"/>
             { props.loggedIn ? 
             postsJSX : 
             props.history.push('/')
@@ -32,4 +33,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps)(PostFeed)
+export default connect(mapStateToProps, { createPost })(PostFeed)

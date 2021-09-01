@@ -16,7 +16,7 @@ class InputField extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault()
-        this.props.createPost(this.state.input, this.props.user)
+        this.props.create(this.state.input, this.props.user)
         this.setState({
             input: ''
         })   
@@ -28,12 +28,12 @@ class InputField extends Component {
                 <form onSubmit={this.handleFormSubmit} className="ui form">
                     <div className="field">
                         {/* this should be a prop */}
-                        <label>What's on your mind?</label>
+                        <label>{this.props.prompt}</label>
                         <input type='text' 
                         value={this.state.input}
                         onChange={this.handleInputChange}/>
                     </div>
-                    <button className="ui button" type="submit">Post</button>
+                    <button className="ui button" type="submit">{this.props.button}</button>
                 </form> 
             </div>
         )
