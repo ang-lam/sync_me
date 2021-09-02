@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logoutUser } from '../actions/usersActions'
+import { logoutUser } from '../../actions/usersActions'
 
 class NavBar extends Component {
     handleClick = e => {

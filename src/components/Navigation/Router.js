@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
-import Home from '../components/Home'
-import RegisterPage from './RegisterPage'
-import AllSyncs from '../containers/AllSyncs'
-import Syncs from '../containers/Syncs'
-import Logout from './Logout';
-import PostFeed from '../containers/PostFeed'
-import Chat from './Messages/Chat'
-import Inbox from './Inbox'
+import Home from '../Home'
+import RegisterPage from '../RegisterPage'
+import AllSyncs from '../../containers/AllSyncs'
+import Syncs from '../../containers/Syncs'
+import Logout from '../Logout';
+import PostFeed from '../../containers/PostFeed'
+import Chat from '../Messages/Chat'
+import Inbox from '../Inbox'
 
 const Router = () => {
     return (
