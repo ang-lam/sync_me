@@ -20,9 +20,6 @@ class Login extends Component {
             this.props.fetchPosts()
             this.props.fetchMessages()
         }
-        // if (this.props.user.currentUser !== {}){
-        //     this.props.routeInfo.history.push('/home')
-        // }
     }
 
     handleFormChange = e => {
@@ -34,13 +31,9 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.login(this.state)
-        this.props.routeInfo.history.push('/posts')
-        
     }
 
     render() {
-        console.log('login', this.props.user.currentUser)
-    
         return (
             <div>
                 <form onSubmit={this.handleSubmit} className="ui form segment">
