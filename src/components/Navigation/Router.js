@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Home from '../Home'
-import RegisterPage from '../RegisterPage'
+import RegisterPage from '../Authentication/RegisterPage'
 import AllSyncs from '../../containers/AllSyncs'
 import Syncs from '../../containers/Syncs'
 import Logout from '../Authentication/Logout';

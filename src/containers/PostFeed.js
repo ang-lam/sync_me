@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import InputField from '../components/InputField';
-import Post from '../components/Authentication/Post';
+import Post from '../components/Post';
 import { createPost } from '../actions/postsActions'
 import '../stylesheets/PostFeed.css'
 
