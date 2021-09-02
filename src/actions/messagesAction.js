@@ -1,6 +1,8 @@
+const apiUrl = 'http://127.0.0.1:3000'
+
 export const fetchMessages = () => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/messages')
+        fetch(`${apiUrl}/messages`)
             .then(resp => resp.json())
             .then(data => dispatch({ type: 'FETCH_MESSAGES', payload: data}))
     }
@@ -13,7 +15,7 @@ export const createMessage = (content, sender, recipient) => {
         content: content
     }
     return dispatch => {
-        fetch('http://127.0.0.1:3000/messages', {
+        fetch(`${apiUrl}/messages`, {
             method: 'POST',
             body: JSON.stringify({message}),
             headers: { 'Content-Type': 'application/json'}
