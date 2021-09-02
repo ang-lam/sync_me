@@ -5,10 +5,13 @@ import Chatroom from './Chatroom'
 
 const Inbox = props => {
 
+    const chatroomJSX = props.inboxUsers.map( user => {
+        return <Chatroom key={user.id} user={user}/>
+    })
     
     return (
         <div>
-            <Chatroom />
+            {chatroomJSX}
         </div>
     )
 }
