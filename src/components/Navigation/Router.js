@@ -4,7 +4,7 @@ import Home from '../Home'
 import RegisterPage from '../RegisterPage'
 import AllSyncs from '../../containers/AllSyncs'
 import Syncs from '../../containers/Syncs'
-import Logout from '../Logout';
+import Logout from '../Authentication/Logout';
 import PostFeed from '../../containers/PostFeed'
 import Chat from '../Messages/Chat'
 import Inbox from '../Inbox'

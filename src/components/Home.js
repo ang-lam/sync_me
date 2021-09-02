@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import AppInfo from './AppInfo';
-import Login from './Login';
+import Login from './Authentication/Login';
 import title from '../images/sync_me_title.png'
 
 const Home = (props) => {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { login } from '../actions/usersActions'
-import { fetchUsers } from '../actions/usersActions'
-import { fetchPosts } from '../actions/postsActions'
-import { fetchMessages } from '../actions/messagesAction';
-import AppInfo from './AppInfo';
+import { login } from '../../actions/usersActions'
+import { fetchUsers } from '../../actions/usersActions'
+import { fetchPosts } from '../../actions/postsActions'
+import { fetchMessages } from '../../actions/messagesAction';
+import AppInfo from '../AppInfo';
 
 class Login extends Component {
 
