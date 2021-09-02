@@ -6,8 +6,9 @@ import { buttonAction } from '../actions/usersActions'
 
 const Syncs = props => {
     //add conditional based off mentee or mentor
-    const handleMessageButton = (id) => {
-        props.history.push('/messages', {
+
+    const handleMessageButton = (id, name) => {
+        props.history.push(`/messages/${name}`, {
             followedId: id
         })
     }

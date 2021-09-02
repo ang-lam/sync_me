@@ -36,10 +36,12 @@ class Chat extends Component {
                 //do this by refactoring input field to get a callback as a prop and do dispatch in the container of the input field
                 //done
             //update state after posting new messsage to render new message -done
+            //anchor input field at bottom of page -done
     
-            //route is /users/id/messages?
+            //route is /users/id/messages? -for inbox
+            //route is /messages/username  - for individial chats
             //let users create username to make chat message url to /messages/username
-            //anchor input field at bottom of page
+            
             //see if can update messages 
             //messages should have a read attribute? true/false to keep track of alerts
     
