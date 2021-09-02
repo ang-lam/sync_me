@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import UserCard from '../components/UserCard'
-import { buttonAction } from '../actions/usersActions'
+import UserCard from './UserCard'
+import { buttonAction } from '../../actions/usersActions'
 
 
 const Syncs = props => {
