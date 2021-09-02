@@ -14,26 +14,9 @@ class RegisterPage extends Component {
         email: '',
         password: '',
         username: ''
-        // user: {
-        //     firstName: '',
-        //     lastName: '',
-        //     company: '',
-        //     bio: '',
-        //     email: '',
-        //     password: '',
-        //     picture: ''
-        // },
-        // submitted: false
     };
 
     handleFormChange = e => {
-        // this.setState({
-        //     ...this.state,
-        //     user: {
-        //         ...this.state.user,
-        //         [e.target.name]: e.target.value
-        //     }
-        // }, () => console.log(this.state))
         this.setState({
             ...this.state,
             [e.target.name]: e.target.value
@@ -43,21 +26,9 @@ class RegisterPage extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        // this.setState({
-        //     ...this.state,
-        //     submitted: true
-        // })
-        // await this.props.registerUser(this.state)
         this.props.registerUser(this.state)
         this.props.routeInfo.history.push('/')
     }
-
-    handleProfilePicture = e => {
-        this.setState({
-            picture: e.target.files[0]
-        })
-    }
-
 
     render() {
         return (
@@ -113,16 +84,6 @@ class RegisterPage extends Component {
                             value={this.state.bio}
                         />
                     </div>
-
-                    {/* <div className="inline fields">
-                        <label>Role</label>
-                        <div className="field">
-                            <div className="ui radio checkbox">
-                                <input type="radio" name="role" value="Mentor" checked="" tabindex="0" className="hidden" />
-                            </div>
-                        </div>
-                    </div> */}
-
                     <div className="field">
                         <label>Email</label>
                         <input
@@ -141,14 +102,6 @@ class RegisterPage extends Component {
                             value={this.state.password}
                         />
                     </div>
-                    {/* <label>Profile Picture:</label> */}
-                    {/* <input
-                        onChange={this.handleProfilePicture}
-                        type="file"
-                        accept="/images/*"
-                        name="picture"
-                        // value={this.state.picture}
-                    /> <br /> */}
                     <button className="ui button" type="submit">Register</button>
                 </form>
             </div>
@@ -156,11 +109,4 @@ class RegisterPage extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        registerUser: userInfo => dispatch(registerUser(userInfo))
-    }
-  
-}
-
-export default withRouter(connect(null, mapDispatchToProps)(RegisterPage))
+export default withRouter(connect(null, { registerUser })(RegisterPage))
