@@ -8,6 +8,7 @@ import Syncs from '../containers/Syncs'
 import Logout from './Logout';
 import PostFeed from '../containers/PostFeed'
 import Chat from './Chat'
+import Inbox from './Inbox'
 
 //import the containers for the 
 
@@ -23,6 +24,7 @@ const Router = () => {
                 <Route exact path='/followed' component={Syncs} />
                 <Route exact path='/logout' component={Logout} />
                 <Route exact path='/posts' component={PostFeed} />
+                <Route exact path='/messages' component={Inbox} />
                 <Route exact path='/messages/:username' component={Chat} />
                 
                 {/* <AuthRoute exact path='/'>
