@@ -1,8 +1,9 @@
 //refactor url to const
+const apiUrl = 'http://127.0.0.1:3000'
 
 export const fetchUsers = () => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/users')
+        fetch(`${apiUrl}/users`)
             .then(resp => resp.json())
             .then(data => dispatch({ type: 'FETCH_USERS', payload: data}))
     }
@@ -10,7 +11,7 @@ export const fetchUsers = () => {
 
 export const login = user => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/login', {
+        fetch(`${apiUrl}/login`, {
             method: 'POST',
             body: JSON.stringify({user}),
             headers: { 'Content-Type': 'application/json'}
@@ -25,7 +26,7 @@ export const login = user => {
 
 export const registerUser = user => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/users', {
+        fetch(`${apiUrl}/users`, {
         method: 'POST',
         body: JSON.stringify({user}),
         headers: { 'Content-Type': 'application/json'}
@@ -47,7 +48,7 @@ export const buttonAction = (button, followedId, followerId) => {
     }
     if(button === 'SYNC'){
         return dispatch => {
-            fetch('http://127.0.0.1:3000/connections', {
+            fetch(`${apiUrl}/connections`, {
             method: 'POST',
             body: JSON.stringify({connection}),
             headers: { 'Content-Type': 'application/json'}
@@ -60,7 +61,7 @@ export const buttonAction = (button, followedId, followerId) => {
         }   
     }else if(button === 'UNFOLLOW'){
         return dispatch => {
-            fetch(`http://127.0.0.1:3000/delete_connection`, {
+            fetch(`${apiUrl}/delete_connection`, {
                 method: 'DELETE',
                 body: JSON.stringify({connection}),
                 headers: {
