@@ -37,10 +37,12 @@ class Chat extends Component {
                 //done
             //update state after posting new messsage to render new message -done
             //anchor input field at bottom of page -done
+            //route is /messages/username  - for individial chats-done
     
             //route is /users/id/messages? -for inbox
-            //route is /messages/username  - for individial chats
             //let users create username to make chat message url to /messages/username
+        
+            //validate login/registration - error messages
             
             //see if can update messages 
             //messages should have a read attribute? true/false to keep track of alerts

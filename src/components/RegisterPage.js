@@ -13,7 +13,7 @@ class RegisterPage extends Component {
         bio: '',
         email: '',
         password: '',
-        picture: ''
+        username: ''
         // user: {
         //     firstName: '',
         //     lastName: '',
@@ -86,6 +86,15 @@ class RegisterPage extends Component {
                                 />
                             </div>
                         </div>  
+                    </div>
+                    <div className="field">
+                        <label>Username</label>
+                        <input
+                            onChange={this.handleFormChange}
+                            type="text"
+                            name="username"
+                            value={this.state.username}
+                        />
                     </div>
                     <div className="field">
                         <label>Company</label>
