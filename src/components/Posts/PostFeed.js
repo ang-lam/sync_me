@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import InputField from '../components/InputField';
-import Post from '../components/Post';
-import { createPost } from '../actions/postsActions'
-import '../stylesheets/PostFeed.css'
+import InputField from '../InputField';
+import Post from './Post';
+import { createPost } from '../../actions/postsActions'
+import '../../stylesheets/PostFeed.css'
 
 const PostFeed = (props) => {
     const followedIds = props.followed.map ( user => user.id )
