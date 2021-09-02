@@ -21,7 +21,7 @@ const UserCard = props => {
             <div className="extra content">
                 <span className="left floated">
                 {props.messageButton ? 
-                (<button className="ui basic button" onClick={(e) => props.handleMessageButton(props.id, props.firstName)}>
+                (<button className="ui basic button" onClick={(e) => props.handleMessageButton(props.id, props.username)}>
                         {props.messageButton}
                 </button>) : null
                 }
