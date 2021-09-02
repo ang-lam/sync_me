@@ -1,5 +1,6 @@
 const initialState = {
-    messages: []
+    messages: [],
+    usersInInbox:[]
 }
 
 export const messagesReducer = (state = initialState, action) => {
@@ -8,6 +9,8 @@ export const messagesReducer = (state = initialState, action) => {
             return {...state, messages: action.payload}
         case 'CREATE_MESSAGE':
             return {...state, messages: [...state.messages, action.payload]}
+        case 'FETCH_INBOX':
+            return {...state, usersInInbox: action.payload}
         default:
             return state
     }

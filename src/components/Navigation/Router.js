@@ -7,7 +7,7 @@ import Syncs from '../Connections/Syncs'
 import Logout from '../Authentication/Logout';
 import PostFeed from '../Posts/PostFeed'
 import Chat from '../Messages/Chat'
-import Inbox from '../Inbox'
+import Inbox from '../Messages/Inbox'
 
 const Router = () => {
     return (

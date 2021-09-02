@@ -26,3 +26,11 @@ export const createMessage = (content, sender, recipient) => {
         })
     }
 }
+
+export const fetchInbox = user => {
+    return dispatch => {
+        fetch(`${apiUrl}/users/${user.id}/inbox`)
+        .then(resp => resp.json())
+        .then(data => dispatch({ type: 'FETCH_INBOX', payload: data}))
+    }
+}
