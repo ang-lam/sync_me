@@ -12,6 +12,10 @@
 
 .messages {
     text-align: left;
+    /* padding-bottom: 150px; */
+}
+
+.emptyDiv {
     padding-bottom: 150px;
 }
 

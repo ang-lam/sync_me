@@ -55,6 +55,8 @@ class Chat extends Component {
                 <div className="MessageFooter">
                     <InputField button="Send" create={this.props.createMessage} followedId={this.props.location.state.followedId}/>
                 </div>
+                <div className="emptyDiv">
+                </div>
                 <div style={{ float:"left", clear: "both" }}
                     ref={(el) => { this.messagesEnd = el; }}>
                 </div>
