@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Message from './Message'
-import InputField from './InputField'
-import { createMessage } from '../actions/messagesAction'
+import InputField from '../InputField'
+import { createMessage } from '../../actions/messagesAction'
 import '../stylesheets/Chat.css'
 
 class Chat extends Component {

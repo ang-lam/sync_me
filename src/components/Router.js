@@ -6,7 +6,7 @@ import AllSyncs from '../containers/AllSyncs'
 import Syncs from '../containers/Syncs'
 import Logout from './Logout';
 import PostFeed from '../containers/PostFeed'
-import Chat from './Chat'
+import Chat from './Messages/Chat'
 import Inbox from './Inbox'
 
 const Router = () => {
