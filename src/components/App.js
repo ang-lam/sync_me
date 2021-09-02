@@ -1,6 +1,6 @@
 import React from 'react';
-import Router from './Router'
-import NavBar from './NavBar'
+import Router from './Navigation/Router'
+import NavBar from './Navigation/NavBar'
 
 const App = () => {
 

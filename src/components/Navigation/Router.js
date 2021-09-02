@@ -2,10 +2,10 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Home from '../Home'
 import RegisterPage from '../Authentication/RegisterPage'
-import AllSyncs from '../../containers/AllSyncs'
-import Syncs from '../../containers/Syncs'
+import AllSyncs from '../Connections/AllSyncs'
+import Syncs from '../Connections/Syncs'
 import Logout from '../Authentication/Logout';
-import PostFeed from '../../containers/PostFeed'
+import PostFeed from '../Posts/PostFeed'
 import Chat from '../Messages/Chat'
 import Inbox from '../Inbox'
 

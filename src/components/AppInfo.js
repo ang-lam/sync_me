@@ -1,5 +1,5 @@
 import React from 'react'
-import '../stylesheets/AppInfo.css'
+import '../../stylesheets/AppInfo.css'
 
 const AppInfo = () => {
     return (

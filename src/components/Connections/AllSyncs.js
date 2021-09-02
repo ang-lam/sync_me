@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import UserCard from './/UserCard'
+import UserCard from './UserCard'
 import { buttonAction } from '../../actions/usersActions'
 
 const AllSyncs = props => {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Message from './Message'
 import InputField from '../InputField'
 import { createMessage } from '../../actions/messagesAction'
-import '../stylesheets/Chat.css'
+import '../../stylesheets/Chat.css'
 
 class Chat extends Component {
     //button will direct to chat route

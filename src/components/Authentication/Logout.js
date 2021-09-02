@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { logoutUser } from '../../actions/usersActions'
-import '../stylesheets/Logout.css'
+import '../../stylesheets/Logout.css'
 
 const Logout = (props) => {
 
