@@ -55,7 +55,7 @@ class Chat extends Component {
                     {messagesJSX}   
                 </div>
                 <div className="MessageFooter">
-                    <InputField button="Send" create={this.props.createMessage} followedId={this.props.location.state.followedId}/>
+                    <InputField button="Send" create={this.props.createMessage} followedId={this.props.location.state.followedId} placeholder="Enter your message..."/>
                 </div>
                 <div className="emptyDiv">
                 </div>

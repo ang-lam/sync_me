@@ -30,7 +30,9 @@ class InputField extends Component {
                         <label>{this.props.prompt}</label>
                         <input type='text' 
                         value={this.state.input}
-                        onChange={this.handleInputChange}/>
+                        onChange={this.handleInputChange}
+                        placeholder={this.props.placeholder}
+                        />
                     </div>
                     <button className="ui button" type="submit">{this.props.button}</button>
                 </form> 
