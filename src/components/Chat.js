@@ -20,6 +20,15 @@ class Chat extends Component {
     this.scrollToBottom();
     }
 
+    createChatroom = (content, sender, recipient) => {
+        this.props.createMessage(content, sender, recipient)
+        //make a action to create a new chatroom - in action if a chatroom that doesn't exist where the ids match - create chatroom
+        //for messages need to get chatroom and send chatroom id
+        //change route to /chatroom/username
+        //make chatroom when you submit a message
+
+    }
+
     render() {
         const currentUsersMessages = this.props.messages.filter( message => message.sender_id === this.props.currentUser.id || message.recipient_id === this.props.currentUser.id)
         const relatedMessages = currentUsersMessages.filter( message => message.sender_id === this.props.location.state.followedId || message.recipient_id === this.props.location.state.followedId)
@@ -55,7 +64,7 @@ class Chat extends Component {
                     {messagesJSX}   
                 </div>
                 <div className="MessageFooter">
-                    <InputField button="Send" create={this.props.createMessage} followedId={this.props.location.state.followedId} placeholder="Enter your message..."/>
+                    <InputField button="Send" create={this.createChatroom} followedId={this.props.location.state.followedId} placeholder="Enter your message..."/>
                 </div>
                 <div className="emptyDiv">
                 </div>
