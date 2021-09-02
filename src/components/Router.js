@@ -2,15 +2,12 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import Home from '../components/Home'
 import RegisterPage from './RegisterPage'
-import AuthRoute from './AuthRoute'
 import AllSyncs from '../containers/AllSyncs'
 import Syncs from '../containers/Syncs'
 import Logout from './Logout';
 import PostFeed from '../containers/PostFeed'
 import Chat from './Chat'
 import Inbox from './Inbox'
-
-//import the containers for the 
 
 const Router = () => {
     return (
