@@ -13,8 +13,6 @@ const Router = () => {
     return (
         <div>
             <Switch>
-                {/* <Route exact path='/' component={ (routeInfo) => <Login routeInfo={routeInfo} />} /> */}
-                {/* <Route exact path='/signup' component={RegisterPage}/> */}
                 <Route exact path='/' component={ (routeInfo) => <Home routeInfo={routeInfo} />} />
                 <Route exact path='/users' component={AllSyncs} />
                 <Route exact path='/signup' component={ (routeInfo) => <RegisterPage routeInfo={routeInfo} />} />
@@ -23,16 +21,6 @@ const Router = () => {
                 <Route exact path='/posts' component={PostFeed} />
                 <Route exact path='/users/:username/inbox' component={Inbox} />
                 <Route exact path='/messages/:username' component={Chat} />
-                
-                {/* <AuthRoute exact path='/'>
-                    <LoginPage />
-                </AuthRoute> */}
-                {/* <AuthRoute exact path='/signup'>
-                    <RegisterPage />
-                </AuthRoute> */}
-                {/* <AuthRoute exact path='/home' type='private'>
-                    <Home />
-                </AuthRoute> */}
             </Switch>
             
         </div>
