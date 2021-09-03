@@ -19,7 +19,8 @@ class Inbox extends Component {
     }
     
     render(){
-        const chatroomJSX = this.props.inboxUsers.map( user => {
+        const removeCurrentUser = this.props.inboxUsers.filter(user => user.id !== this.props.user.id)
+        const chatroomJSX = removeCurrentUser.map( user => {
             return <Chatroom key={user.id} user={user} history={this.props.history}/>
         })
         return (
