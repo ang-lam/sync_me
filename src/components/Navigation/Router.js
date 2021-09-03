@@ -21,7 +21,7 @@ const Router = () => {
                 <Route exact path='/followed' component={Syncs} />
                 <Route exact path='/logout' component={Logout} />
                 <Route exact path='/posts' component={PostFeed} />
-                <Route exact path='/messages' component={Inbox} />
+                <Route exact path='/users/:username/inbox' component={Inbox} />
                 <Route exact path='/messages/:username' component={Chat} />
                 
                 {/* <AuthRoute exact path='/'>

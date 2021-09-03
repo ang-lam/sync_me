@@ -52,7 +52,7 @@ class NavBar extends Component {
                         </div>
                         <div className="item">
                             <div className="home icon">
-                                <Link to='/messages'>Inbox</Link>
+                                <Link to={`/users/${this.props.currentUser.username}/inbox`}>Inbox</Link>
                             </div>
                         </div>
                         <div className="item">
@@ -71,7 +71,10 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = state => {
-    return ({loggedIn: state.users.loggedIn})
+    return ({
+        loggedIn: state.users.loggedIn,
+        currentUser: state.users.currentUser
+    })
 }
 
 export default connect(mapStateToProps, { logoutUser })(NavBar)
