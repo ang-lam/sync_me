@@ -3,8 +3,13 @@ import { connect } from 'react-redux'
 import '../../stylesheets/Chatroom.css'
 
 const Chatroom = props => {
-    const sortByRecent = props.user.messages.reverse()
-    const lastMessage = sortByRecent.find( message => message.sender_id === props.user.id || message.recipient_id === props.user.id)
+    const lastMessage = props.user.messages.reduce((prev, current) => {
+        if(+current.id > +prev.id) {
+            return current 
+        } else {
+            return prev
+        }
+    })
     const lastSender = lastMessage.sender_id === props.currentUser.id ? props.currentUser.firstName : props.user.firstName
     const handleClick = (username, user) => {
         props.history.push(`/messages/${username}`, {
