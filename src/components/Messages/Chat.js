@@ -37,27 +37,12 @@ class Chat extends Component {
         })
         const MessageForPrompt = `Send a message to ${this.props.location.state.followed.firstName} ${this.props.location.state.followed.lastName}`
         return (
-            
-            //get all messages from backend and store in store - done
-            //iterate through all messages to match the two users through sender_id and user_id -done
-            //make a message component that renders each message on the chat page - done
-            //have input at bottom of chat page with send button - done
-            //send button should make a post request to backend to create new message with sender_id === currentUser.id and recipient_id === followed_id
-                //do this by refactoring input field to get a callback as a prop and do dispatch in the container of the input field
-                //done
-            //update state after posting new messsage to render new message -done
-            //anchor input field at bottom of page -done
-            //route is /messages/username  - for individial chats-done
-            //route is /users/id/messages? -for inbox - /users/username/inbox - done
-
-            //let users create username to make chat message url to /messages/username
         
             //validate login/registration - error messages
             
             //see if can update messages 
             //messages should have a read attribute? true/false to keep track of alerts
     
-            //make inbox component that displays all messages? - do this last
             //if message sender is currentUser send a prop to differentiate else send another prop so can style
             //check login
             <>
