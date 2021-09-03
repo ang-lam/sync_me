@@ -5,6 +5,7 @@ import { fetchInbox } from '../../actions/messagesAction';
 import { messageLoad } from '../../actions/messagesAction';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import '../../stylesheets/Inbox.css'
 
 
 class Inbox extends Component {
@@ -24,7 +25,7 @@ class Inbox extends Component {
         return (
             <div>
                 {!!this.props.isLoading ?
-                    (<div><Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /></div>)
+                    (<div className="loader"><Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /></div>)
                     :
                     chatroomJSX
                 }
