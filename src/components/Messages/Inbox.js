@@ -23,17 +23,17 @@ class Inbox extends Component {
         const chatroomJSX = removeCurrentUser.map( user => {
             return <Chatroom key={user.id} user={user} history={this.props.history}/>
         })
+        const loadingTernary = !!this.props.isLoading ?
+            <div className="loader"><Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /></div>
+            :
+            <div className="ui raised segments messages">{chatroomJSX}</div>
+        
         return (
             <>
-                {!!this.props.isLoading ?
-                    (<div className="loader"><Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /></div>)
-                    :
-                    <div className="ui raised segments messages">{chatroomJSX}</div>
+                {removeCurrentUser.length === 0 ? <div className="ui segment">Your inbox is empty</div>
+                :
+                loadingTernary
                 }
-                
-                {/* {this.props.inboxUsers.map( user => {
-                    return <Chatroom key={user.id} user={user} history={this.props.history}/>
-                })} */}
             </>
         )
     }
