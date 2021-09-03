@@ -20,7 +20,7 @@ class RegisterPage extends Component {
         this.setState({
             ...this.state,
             [e.target.name]: e.target.value
-        }, () => console.log(this.state))
+        })
 
     }
 
