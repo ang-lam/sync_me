@@ -11,7 +11,7 @@ const AllSyncs = props => {
     })
     const allCardsJSX = removeUsers.map( user => {
         return (
-            <UserCard id={user.id} firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} button="SYNC" handleButton={props.buttonAction} currentUser={props.currentUser} />
+            <UserCard key={user.id} id={user.id} firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} button="SYNC" handleButton={props.buttonAction} currentUser={props.currentUser} />
         )
     })
 
