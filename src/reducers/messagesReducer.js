@@ -1,6 +1,7 @@
 const initialState = {
     messages: [],
-    usersInInbox:[]
+    usersInInbox:[],
+    isLoading: true
 }
 
 export const messagesReducer = (state = initialState, action) => {
@@ -10,7 +11,9 @@ export const messagesReducer = (state = initialState, action) => {
         case 'CREATE_MESSAGE':
             return {...state, messages: [...state.messages, action.payload]}
         case 'FETCH_INBOX':
-            return {...state, usersInInbox: action.payload}
+            return {...state, usersInInbox: action.payload, isLoading: false}
+        case 'CHANGE_LOADING':
+            return {...state, isLoading: true}
         default:
             return state
     }

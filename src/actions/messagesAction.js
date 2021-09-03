@@ -34,3 +34,5 @@ export const fetchInbox = user => {
         .then(data => dispatch({ type: 'FETCH_INBOX', payload: data}))
     }
 }
+
+export const messageLoad = () => ({ type: 'CHANGE_LOADING'})
