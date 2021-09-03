@@ -7,15 +7,15 @@ import { buttonAction } from '../../actions/usersActions'
 const Syncs = props => {
     //add conditional based off mentee or mentor
 
-    const handleMessageButton = (id, username) => {
+    const handleMessageButton = (followed, username) => {
         props.history.push(`/messages/${username}`, {
-            followedId: id
+            followed: followed
         })
     }
 
     const allCardsJSX = props.followed.map( user => {
         return (
-            <UserCard id={user.id} username={user.username} firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} email={user.email} handleButton={props.buttonAction} handleMessageButton={handleMessageButton} button="UNFOLLOW" messageButton="MESSAGE" currentUser={props.currentUser}/>
+            <UserCard key={user.id} user={user} id={user.id} username={user.username} firstName={user.firstName} lastName={user.lastName} company={user.company} bio={user.bio} email={user.email} handleButton={props.buttonAction} handleMessageButton={handleMessageButton} button="UNFOLLOW" messageButton="MESSAGE" currentUser={props.currentUser}/>
         )
     })
 

@@ -31,10 +31,11 @@ class Chat extends Component {
 
     render() {
         const currentUsersMessages = this.props.messages.filter( message => message.sender_id === this.props.currentUser.id || message.recipient_id === this.props.currentUser.id)
-        const relatedMessages = currentUsersMessages.filter( message => message.sender_id === this.props.location.state.followedId || message.recipient_id === this.props.location.state.followedId)
+        const relatedMessages = currentUsersMessages.filter( message => message.sender_id === this.props.location.state.followed.id || message.recipient_id === this.props.location.state.followed.id)
         const messagesJSX = relatedMessages.map( message => {
             return <Message key={message.id} content={message.content} sender={message.sender}/>
         })
+        const MessageForPrompt = `Send a message to ${this.props.location.state.followed.firstName} ${this.props.location.state.followed.lastName}`
         return (
             
             //get all messages from backend and store in store - done
@@ -47,8 +48,8 @@ class Chat extends Component {
             //update state after posting new messsage to render new message -done
             //anchor input field at bottom of page -done
             //route is /messages/username  - for individial chats-done
-    
-            //route is /users/id/messages? -for inbox
+            //route is /users/id/messages? -for inbox - /users/username/inbox - done
+
             //let users create username to make chat message url to /messages/username
         
             //validate login/registration - error messages
@@ -64,7 +65,7 @@ class Chat extends Component {
                     {messagesJSX}   
                 </div>
                 <div className="MessageFooter">
-                    <InputField button="Send" create={this.createChatroom} followedId={this.props.location.state.followedId} placeholder="Enter your message..."/>
+                    <InputField button="Send" create={this.createChatroom} followedId={this.props.location.state.followed.id} placeholder="Enter your message..." prompt={MessageForPrompt}/>
                 </div>
                 <div className="emptyDiv">
                 </div>
