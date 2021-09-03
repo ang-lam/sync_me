@@ -33,7 +33,7 @@ class Chat extends Component {
         const currentUsersMessages = this.props.messages.filter( message => message.sender_id === this.props.currentUser.id || message.recipient_id === this.props.currentUser.id)
         const relatedMessages = currentUsersMessages.filter( message => message.sender_id === this.props.location.state.followed.id || message.recipient_id === this.props.location.state.followed.id)
         const messagesJSX = relatedMessages.map( message => {
-            return <Message key={message.id} content={message.content} sender={message.sender}/>
+            return <Message key={message.id} content={message.content} sender={message.sender} message={message}/>
         })
         const MessageForPrompt = `Send a message to ${this.props.location.state.followed.firstName} ${this.props.location.state.followed.lastName}`
         return (
