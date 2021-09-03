@@ -6,7 +6,6 @@ import { createMessage } from '../../actions/messagesAction'
 import '../../stylesheets/Chat.css'
 
 class Chat extends Component {
-    //button will direct to chat route
 
     scrollToBottom = () => {
         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
@@ -22,11 +21,6 @@ class Chat extends Component {
 
     createChatroom = (content, sender, recipient) => {
         this.props.createMessage(content, sender, recipient)
-        //make a action to create a new chatroom - in action if a chatroom that doesn't exist where the ids match - create chatroom
-        //for messages need to get chatroom and send chatroom id
-        //change route to /chatroom/username
-        //make chatroom when you submit a message
-
     }
 
     render() {
@@ -42,9 +36,7 @@ class Chat extends Component {
             
             //see if can update messages 
             //messages should have a read attribute? true/false to keep track of alerts
-    
-            //if message sender is currentUser send a prop to differentiate else send another prop so can style
-            //check login
+
             <>
                 <div className="ui raised segments messages">  
                     {messagesJSX}   
