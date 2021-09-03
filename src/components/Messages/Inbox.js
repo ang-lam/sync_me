@@ -23,17 +23,17 @@ class Inbox extends Component {
             return <Chatroom key={user.id} user={user} history={this.props.history}/>
         })
         return (
-            <div>
+            <>
                 {!!this.props.isLoading ?
                     (<div className="loader"><Loader type="ThreeDots" color="#00BFFF" height={80} width={80} /></div>)
                     :
-                    chatroomJSX
+                    <div className="ui raised segments messages">{chatroomJSX}</div>
                 }
                 
                 {/* {this.props.inboxUsers.map( user => {
                     return <Chatroom key={user.id} user={user} history={this.props.history}/>
                 })} */}
-            </div>
+            </>
         )
     }
     
