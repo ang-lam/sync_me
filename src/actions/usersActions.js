@@ -19,7 +19,10 @@ export const login = user => {
             .then(resp => resp.json())
             .then(data => {
                 localStorage.setItem("token", data.jwt)
-                dispatch(loginUser(data.user))
+                if(data.failure){
+                    alert(data.failure)
+                }else{dispatch(loginUser(data.user))}
+                
             })
     }
 }
