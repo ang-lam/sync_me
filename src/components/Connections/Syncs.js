@@ -5,7 +5,6 @@ import { buttonAction } from '../../actions/usersActions'
 
 
 const Syncs = props => {
-    //add conditional based off mentee or mentor
 
     const handleMessageButton = (followed, username) => {
         props.history.push(`/messages/${username}`, {
@@ -32,7 +31,6 @@ const Syncs = props => {
 }
 
 const mapStateToProps = state => {
-    // return ({users: state.users.allUsers})
     return ({followed: state.users.followed, 
             loggedIn: state.users.loggedIn,
             currentUser: state.users.currentUser
