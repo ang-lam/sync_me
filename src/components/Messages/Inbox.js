@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Chatroom from './Chatroom'
+import { fetchInbox } from '../../actions/messagesAction';
 
 
-const Inbox = props => {
-
-    const chatroomJSX = props.inboxUsers.map( user => {
-        return <Chatroom key={user.id} user={user} history={props.history}/>
-    })
+class Inbox extends Component {
     
-    return (
-        <div>
-            {chatroomJSX}
-        </div>
-    )
+    componentDidMount(){
+        this.props.fetchInbox(this.props.user)
+    }
+
+    // chatroomJSX = () => {
+    //     this.props.inboxUsers.map( user => {
+    //     return <Chatroom key={user.id} user={user} history={this.props.history}/>
+    // })}
+    
+    render(){
+        return (
+            <div>
+                {this.props.inboxUsers.map( user => {
+                    return <Chatroom key={user.id} user={user} history={this.props.history}/>
+                })}
+            </div>
+        )
+    }
+    
 }
 
 const mapStateToProps = state => {
@@ -23,4 +34,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps)(Inbox)
+export default connect(mapStateToProps, { fetchInbox })(Inbox)

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { fetchInbox } from '../actions/messagesAction';
 import '../stylesheets/AppInfo.css'
 
 class AppInfo extends Component {
-
-    componentDidMount(){
-        this.props.fetchInbox(this.props.user)
-    }
     
     render() {
         return (
@@ -32,4 +27,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps, { fetchInbox })(AppInfo)
+export default connect(mapStateToProps)(AppInfo)
