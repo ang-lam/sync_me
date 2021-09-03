@@ -1,21 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import '../../stylesheets/Message.css'
 
 const Message = props => {
+    const senderIsCurrentUser = props.sender.id === props.currentUser.id ? "currentUser" : "notCurrentUser"
     return (
         <div className="ui segment">
-            <div className="content">
-                <div className="author">
+            <div className={`${senderIsCurrentUser}`}>
+                <div className={`${senderIsCurrentUser}Name`}>
                      {props.sender.firstName} {props.sender.lastName}
                 </div>
-                    <span className="date">
+                    <div className={`${senderIsCurrentUser}Date`}>
                         3 days ago
-                    </span>
-                <div className="ui segment">
+                    </div>
+                <div className={`${senderIsCurrentUser}Text`}>
                     <h4>{props.content}</h4>
                 </div>
             </div>
         </div>
     )
 }
-
-export default Message
+const mapStateToProps = state => {
+    return ({currentUser: state.users.currentUser})
+}
+export default connect(mapStateToProps)(Message)

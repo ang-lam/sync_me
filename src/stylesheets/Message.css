@@ -1,0 +1,39 @@
+h4 {
+    color: rgb(39, 38, 39);
+}
+
+.currentUserText {
+    background-color: rgb(143, 189, 153);
+    border: 2px solid rgb(140, 177, 148);
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-right: 80px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+    margin: 20px 0;
+    text-align: right;
+}
+
+.currentUserName {
+    text-align: right;
+}
+
+.currentUserDate {
+    text-align: right;
+}
+
+.notCurrentUserText {
+    background-color: rgb(140, 180, 207);
+    border: 2px solid rgb(142, 178, 196);
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-right: 80px;
+    padding-bottom: 20px;
+    padding-left: 80px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.currentUser {
+    align-content: right;
+}
