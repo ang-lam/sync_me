@@ -12,7 +12,7 @@ const PostFeed = (props) => {
     })
     const chronologicalPosts = followedPosts.reverse()
     const postsJSX = chronologicalPosts.map(post => {
-        return <Post key={post.id} userId={post.user_id} content={post.content} user={post.user}/>
+        return <Post key={post.id} userId={post.user_id} content={post.content} user={post.user} post={post}/>
     })
 
     return (
