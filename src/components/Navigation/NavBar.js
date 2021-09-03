@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logoutUser } from '../../actions/usersActions'
 
 class NavBar extends Component {
-    handleClick = e => {
-        e.preventDefault()
-        //remove token from localStorage
-        localStorage.removeItem('token');
-        //remove user object from redux store
-        this.props.logoutUser();
-        //redirect to login page!!!!!!!
- 
-
-    }
-
     render(){
         return (
             <div className="ui segment padded">
@@ -77,4 +65,4 @@ const mapStateToProps = state => {
     })
 }
 
-export default connect(mapStateToProps, { logoutUser })(NavBar)
+export default connect(mapStateToProps)(NavBar)
